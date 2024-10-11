@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - obstacle
+  - trash
+  - npc
+  - TrashCan
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Interactables
+  - Water
+  - UI
+  - Player
+  - FadeObjects
+  - Trash
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Trash
+    uniqueID: 1800882611
+    locked: 0
+  - name: Leafs
+    uniqueID: 3773801851
+    locked: 0
