@@ -50,13 +50,13 @@ public class NPC : MonoBehaviour
         rb.MovePosition( currentPosition + direction * speed * Time.deltaTime);
 
         // Check boundaries
-        CheckBounds();
+        //CheckBounds();
 
         // Timer to change direction
         timer += Time.deltaTime;
         if (timer >= changeDirectionTime)
         {
-            ChooseRandomDirection();
+            //ChooseRandomDirection();
             timer = 0f;
         }
 
@@ -144,7 +144,7 @@ public class NPC : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the object collided with an obstacle
-        if (collision.gameObject.CompareTag("obstacle"))
+        /*if (collision.gameObject.CompareTag("obstacle"))
         {
             // Change direction when colliding with an obstacle
             ChooseRandomDirection();
@@ -154,6 +154,12 @@ public class NPC : MonoBehaviour
         {
             // Ignore collision with NPCs
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
-        }
+        }*/
+
+        // Change direction when colliding with an obstacle
+
+        Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
+        direction = (collision.contacts[0].point - currentPosition);
+        rb.AddForce(direction * 20f);
     }
 }
