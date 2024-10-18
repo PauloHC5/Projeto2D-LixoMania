@@ -27,6 +27,13 @@ public class NPC : MonoBehaviour
     // Variable to track the shadow rotation state
     private bool isShadowRotated = false;
 
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Start()
     {
         // Store the original scale of the object
@@ -38,8 +45,9 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
-        // Move the object
-        transform.Translate(direction * speed * Time.deltaTime);
+        // Move the object        
+        Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
+        rb.MovePosition( currentPosition + direction * speed * Time.deltaTime);
 
         // Check boundaries
         CheckBounds();
