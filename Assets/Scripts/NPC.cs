@@ -12,7 +12,7 @@ public class NPC : MonoBehaviour
     public float maxY = 25f;
 
     // Time to change direction
-    private float changeDirectionTime = 2f;
+    [SerializeField] private float changeDirectionTime = 2f;
     private float timer = 0f;
 
     // Movement direction
@@ -26,6 +26,7 @@ public class NPC : MonoBehaviour
 
     // Variable to track the shadow rotation state
     private bool isShadowRotated = false;
+    private bool canMove = true;
 
     private Rigidbody2D rb;
 
@@ -40,15 +41,11 @@ public class NPC : MonoBehaviour
         originalScale = transform.localScale;
 
         // Start with a random direction
-        ChooseRandomDirection();
+        ChooseRandomDirection();        
     }
 
     void Update()
-    {
-        // Move the object        
-        Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
-        rb.MovePosition( currentPosition + direction * speed * Time.deltaTime);
-
+    {                        
         // Check boundaries
         CheckBounds();
 
@@ -62,6 +59,13 @@ public class NPC : MonoBehaviour
 
         // Flip the object based on the direction
         FlipObject();
+    }
+
+    private void FixedUpdate()
+    {
+        // Move the object                
+        Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
+        rb.MovePosition(currentPosition + direction * speed * Time.deltaTime);
     }
 
     void ChooseRandomDirection()
@@ -143,17 +147,7 @@ public class NPC : MonoBehaviour
     // Handle collision with obstacles or NPCs
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the object collided with an obstacle
-        if (collision.gameObject.CompareTag("obstacle"))
-        {
-            // Change direction when colliding with an obstacle
-            ChooseRandomDirection();
-        }
-        // Check if the object collided with another NPC
-        else if (collision.gameObject.CompareTag("npc"))
-        {
-            // Ignore collision with NPCs
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
-        }
+        // Change direction when colliding with an obstacle                      
+        direction = (collision.contacts[0].normal).normalized;        
     }
 }
