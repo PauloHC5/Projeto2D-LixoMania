@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 5020004619764123534}
   - component: {fileID: 1839946159071265665}
   - component: {fileID: 6332522382990970018}
-  - component: {fileID: 5617925018481968256}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -219,18 +218,6 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &5617925018481968256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4071116275319601372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c334c56111081429b559cb5f31a5c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4867715292800905653
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,14 +379,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6600729620998300963}
   - component: {fileID: 5207343562579573820}
-  - component: {fileID: 6693455575714754121}
+  - component: {fileID: 1182815243220315801}
   m_Layer: 8
   m_Name: AttackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6600729620998300963
 Transform:
   m_ObjectHideFlags: 0
@@ -422,7 +409,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7155879609689674041}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -460,7 +447,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26, y: 0.22}
   m_EdgeRadius: 0
---- !u!114 &6693455575714754121
+--- !u!114 &1182815243220315801
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -469,9 +456,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7155879609689674041}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32d2b4cee50117a4e87a1d78f3c00bce, type: 3}
+  m_Script: {fileID: 11500000, guid: b5c334c56111081429b559cb5f31a5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trashMaxCapacity: 10
+  trashCollected: 0
+  canCollectTrash: 1
 --- !u!1 &7738232911504975744
 GameObject:
   m_ObjectHideFlags: 0

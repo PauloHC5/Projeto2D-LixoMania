@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerTrashCollection : MonoBehaviour
 {
-    [SerializeField] private int trashMaxCapacity = 10;
+    [SerializeField] private int trashMaxCapacity = 10;        
 
-    private int trashCollected;
+    [SerializeField] private int trashCollected = 0;
+
+    [SerializeField] private bool canCollectTrash = true;
 
     public int TrashCollected
     {
@@ -17,15 +19,17 @@ public class PlayerTrashCollection : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public bool CanCollectTrash {
+        get { return canCollectTrash; }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Update() {
+        canCollectTrash = trashCollected < trashMaxCapacity ? true : false;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {                
+        TrashCollected++;
+        Destroy(collision.gameObject);                                
+    }    
 }

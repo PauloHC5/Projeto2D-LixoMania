@@ -11,9 +11,5 @@ public class AttackHitBox : MonoBehaviour
         trashCollection = GetComponentInParent<PlayerTrashCollection>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        trashCollection.TrashCollected += 1;
-        Destroy(collision.gameObject);
-    }
+    
 }

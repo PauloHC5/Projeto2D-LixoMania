@@ -9,9 +9,29 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float raycastLength = 1f;        
     [SerializeField] private LayerMask raycastLayerMask;
 
-    private GameObject objectHold;            
+    private GameObject objectHold;
+
+    public GameObject ObjectHold {
+        get { return objectHold; }
+
+        set 
+        {            
+            IInteractable interactable = value.GetComponent<IInteractable>();
+
+            if (interactable != null)
+            {
+                holdPos.gameObject.SetActive(true);
+                objectHold = interactable.Interact();                                
+            }
+        }
+    }
+
     private Animator animator;
     private bool isHolding;
+
+    public bool IsHolding {
+        get { return isHolding; }        
+    }
         
     
     void Awake()
@@ -35,14 +55,8 @@ public class PlayerInteract : MonoBehaviour
         if (!isHolding)
         {
             RaycastHit2D hitResult = ProjectRaycast();            
-
-            IInteractable interactable = hitResult? hitResult.collider.GetComponent<IInteractable>() : null;
-
-            if (interactable != null && !hitResult.collider.isTrigger)
-            {
-                holdPos.gameObject.SetActive(true);
-                objectHold = interactable.Interact();                                
-            }
+            
+            if (!hitResult.collider.isTrigger) ObjectHold = hitResult.collider.gameObject;
         }
         else
         {

@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7002,7 +7001,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.27907
+  orthographic size: 3.6744187
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7130,12 +7129,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &519562124
 GameObject:
   m_ObjectHideFlags: 0
@@ -7275,6 +7274,7 @@ MonoBehaviour:
   maxX: 14.5
   minY: -25
   maxY: 25
+  changeDirectionTime: 2
   shadowChild: {fileID: 0}
 --- !u!61 &525217527
 BoxCollider2D:
@@ -7800,6 +7800,10 @@ PrefabInstance:
     - target: {fileID: 4071116275319601372, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155879609689674041, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12015,6 +12019,7 @@ MonoBehaviour:
   maxX: 14.5
   minY: -25
   maxY: 25
+  changeDirectionTime: 2
   shadowChild: {fileID: 1354130305}
 --- !u!61 &825759218
 BoxCollider2D:
@@ -13830,6 +13835,7 @@ MonoBehaviour:
   maxX: 14.5
   minY: -25
   maxY: 25
+  changeDirectionTime: 2
   shadowChild: {fileID: 1134219451}
 --- !u!61 &942479041
 BoxCollider2D:
@@ -22711,6 +22717,7 @@ MonoBehaviour:
   maxX: 14.5
   minY: -25
   maxY: 25
+  changeDirectionTime: 2
   shadowChild: {fileID: 1153349319}
 --- !u!4 &1579646757
 Transform:
@@ -24841,6 +24848,7 @@ MonoBehaviour:
   maxX: 14.5
   minY: -25
   maxY: 25
+  changeDirectionTime: 2
   shadowChild: {fileID: 1456134643}
 --- !u!61 &1689191688
 BoxCollider2D:
@@ -26198,6 +26206,7 @@ MonoBehaviour:
   maxX: 14.5
   minY: -25
   maxY: 25
+  changeDirectionTime: 2
   shadowChild: {fileID: 0}
 --- !u!61 &1768033687
 BoxCollider2D:
@@ -29012,6 +29021,7 @@ MonoBehaviour:
   maxX: 14.5
   minY: -25
   maxY: 25
+  changeDirectionTime: 2
   shadowChild: {fileID: 2048817104}
 --- !u!4 &1962778996
 Transform:
@@ -29996,6 +30006,7 @@ MonoBehaviour:
   maxX: 14.5
   minY: -25
   maxY: 25
+  changeDirectionTime: 2
   shadowChild: {fileID: 1706799601}
 --- !u!4 &2018280529
 Transform:

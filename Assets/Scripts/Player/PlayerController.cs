@@ -35,12 +35,14 @@ public class PlayerController : MonoBehaviour
     protected Vector2 movementInput;
     protected Animator animator;
     protected PlayerInteract playerInteract;
+    protected PlayerTrashCollection trashCollection;
     
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();        
-        playerInteract = GetComponent<PlayerInteract>(); 
+        playerInteract = GetComponent<PlayerInteract>();
+        trashCollection = GetComponentInChildren<PlayerTrashCollection>();
     }
 
     private void Update()
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     void OnFire()
     {                
-        if(canMove && !animator.GetBool(isCarrying)) animator.SetTrigger(Attack);        
+        if(canMove && !playerInteract.IsHolding) animator.SetTrigger(Attack);        
     }
 
     void OnThrow(GameObject objectHold)
