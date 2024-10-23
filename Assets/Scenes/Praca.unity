@@ -7801,10 +7801,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7155879609689674041, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20026,7 +20022,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 482172239578683575, guid: 78e6ff4429b691a42b5819a58f39e228, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 482172239578683575, guid: 78e6ff4429b691a42b5819a58f39e228, type: 3}
       propertyPath: m_SortingLayerID
@@ -23836,6 +23832,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1621049568
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6808676007035196083, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_Name
+      value: sacoDeLixo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.12160945
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5526015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977455797092323058, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
 --- !u!1 &1623429926
 GameObject:
   m_ObjectHideFlags: 0
@@ -32137,3 +32190,4 @@ SceneRoots:
   - {fileID: 1449644333}
   - {fileID: 223416964}
   - {fileID: 1266709367}
+  - {fileID: 1621049568}
