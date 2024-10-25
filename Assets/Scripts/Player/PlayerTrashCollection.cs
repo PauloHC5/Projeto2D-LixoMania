@@ -8,28 +8,29 @@ public class PlayerTrashCollection : MonoBehaviour
 
     [SerializeField] private int trashCollected = 0;
 
-    [SerializeField] private bool canCollectTrash = true;
+    private PlayerInteract playerInteract;    
 
-    public int TrashCollected
+    private void Awake()
     {
-        get { return trashCollected; }
-        set 
-        {
-            if (trashCollected <= trashMaxCapacity) trashCollected = value; 
-        }
-    }
-
-    public bool CanCollectTrash {
-        get { return canCollectTrash; }
-    }
-
-    private void Update() {
-        canCollectTrash = trashCollected < trashMaxCapacity ? true : false;
-    }
+        playerInteract = GetComponentInParent<PlayerInteract>();
+    }    
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {                
-        TrashCollected++;
-        Destroy(collision.gameObject);                                
-    }    
+    {
+        if (trashCollected < trashMaxCapacity)
+        {
+            trashCollected++;
+            Destroy(collision.gameObject);
+            CreateTrashBag();
+        }
+    }   
+    
+    private void CreateTrashBag()
+    {
+        if (trashCollected >= trashMaxCapacity)
+        {
+            GameObject trashBag = Instantiate(Resources.Load<GameObject>("sacoDeLixo"));
+            playerInteract.ObjectHold = trashBag;
+        }
+    }
 }
