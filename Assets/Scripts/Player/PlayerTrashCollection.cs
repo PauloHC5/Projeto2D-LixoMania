@@ -31,6 +31,7 @@ public class PlayerTrashCollection : MonoBehaviour
         {
             GameObject trashBag = Instantiate(Resources.Load<GameObject>("sacoDeLixo"));
             playerInteract.ObjectHold = trashBag;
+            trashCollected = 0;
         }
     }
 }
