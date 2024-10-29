@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PlayerTrashCollection : MonoBehaviour
 {
-    [SerializeField] private int trashMaxCapacity = 10;        
+    [SerializeField] private int trashMaxCapacity = 5;        
 
     [SerializeField] private int trashCollected = 0;
 
     private PlayerInteract playerInteract;    
+
+    public int TrashMaxCapacity {  get { return trashMaxCapacity; } }
+
+    public int TrashCollected { get {  return trashCollected; } }
 
     private void Awake()
     {

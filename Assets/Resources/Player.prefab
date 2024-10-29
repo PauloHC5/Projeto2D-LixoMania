@@ -461,7 +461,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trashMaxCapacity: 10
   trashCollected: 0
-  canCollectTrash: 1
 --- !u!1 &7738232911504975744
 GameObject:
   m_ObjectHideFlags: 0
