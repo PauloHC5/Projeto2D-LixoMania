@@ -431,13 +431,14 @@ GameObject:
   - component: {fileID: 1537993179649578459}
   - component: {fileID: 254353058409865110}
   - component: {fileID: 2010241329080091452}
-  m_Layer: 0
-  m_Name: outline1 (2)
+  - component: {fileID: 2557849198600385518}
+  m_Layer: 1
+  m_Name: Trash zone spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1537993179649578459
 Transform:
   m_ObjectHideFlags: 0
@@ -447,7 +448,7 @@ Transform:
   m_GameObject: {fileID: 4154909593428257800}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.020000076, y: 0.12800026, z: 0}
+  m_LocalPosition: {x: 0.020000076, y: -0.375, z: 0}
   m_LocalScale: {x: 0.5, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -678,6 +679,18 @@ PolygonCollider2D:
       - {x: -0.049999997, y: -1.18}
       - {x: -0.06, y: -1.17}
   m_UseDelaunayMesh: 0
+--- !u!114 &2557849198600385518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4154909593428257800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a317742f17cd7144d859cb3f20df5221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4341095294668013065
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +704,7 @@ GameObject:
   - component: {fileID: 369592764253916172}
   - component: {fileID: 4066724291154934649}
   m_Layer: 3
-  m_Name: sacosDeLixo
+  m_Name: BolsaoDeLixo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
