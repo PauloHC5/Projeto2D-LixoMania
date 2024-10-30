@@ -691,6 +691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a317742f17cd7144d859cb3f20df5221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trashSpawnTimer: 1
+  spawnRadius: 1
 --- !u!1 &4341095294668013065
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,8 +703,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5495185031939348143}
   - component: {fileID: 3668002737824744301}
-  - component: {fileID: 369592764253916172}
   - component: {fileID: 4066724291154934649}
+  - component: {fileID: 5045785831763091599}
   m_Layer: 3
   m_Name: BolsaoDeLixo
   m_TagString: Untagged
@@ -785,33 +787,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &369592764253916172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4341095294668013065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trashBag: {fileID: 6808676007035196083, guid: bc2f712073c219e4eb1a0c2fff50f3e0, type: 3}
-  spriteListIndex: 0
-  sprites:
-  - {fileID: 0}
-  - {fileID: 3851396724141123130, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: 3038373688905630820, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: -5795306344514492869, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: -6927899042158135659, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: -6072956879060983902, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: 7903413698013189215, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: -7559059137313551824, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: 3815053125510696804, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: -8487010571583255783, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: 7367152204055848966, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: -8818056760300160889, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
 --- !u!61 &4066724291154934649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -857,6 +832,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78, y: 0.34}
   m_EdgeRadius: 0
+--- !u!114 &5045785831763091599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341095294668013065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteListIndex: 0
+  sprites:
+  - {fileID: 0}
+  - {fileID: 3851396724141123130, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: 3038373688905630820, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: -5795306344514492869, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: -6927899042158135659, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: -6072956879060983902, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: 7903413698013189215, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: -7559059137313551824, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: 3815053125510696804, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: -8487010571583255783, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: 7367152204055848966, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  - {fileID: -8818056760300160889, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
 --- !u!1 &5216541803449867405
 GameObject:
   m_ObjectHideFlags: 0

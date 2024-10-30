@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TrashZoneSpawner : MonoBehaviour
-{
+{    
     [SerializeField] private int trashSpawnTimer = 1;
-    [SerializeField] private float spawnRadius = 1;
+    [SerializeField] private float spawnRadius = 1.0f;    
 
-    private TrashBagSpawner trashBagSpawner;    
+    private TrashZone trashZone;    
 
     void Awake()
     {
-        trashBagSpawner = GetComponentInParent<TrashBagSpawner>();
+        trashZone = GetComponentInParent<TrashZone>();        
     }
 
     private void Update()
     {
-        if(trashBagSpawner.IsAccumulated)
+        if(trashZone.IsAccumulated)
         {
             InvokeRepeating(nameof(SpawnTrashInTheZone), trashSpawnTimer, trashSpawnTimer);
         }
@@ -24,14 +24,11 @@ public class TrashZoneSpawner : MonoBehaviour
 
     private void SpawnTrashInTheZone()
     {
-        GameObject trashToSpawn = Resources.Load<GameObject>("lataDeCoca");
-        Instantiate(trashToSpawn);
+        GameObject trashToSpawn = Resources.Load<GameObject>("lataDeCoca");        
 
-        //Random.insideUnitCircle traz um ponto na tela dentro de um
-        //circulo de raio 1
-        //portanto a gente multiplica por um valor para que esse raio seja maior
-        trashToSpawn.transform.position = Random.insideUnitCircle * spawnRadius;
+        Vector2 trashPosition = new Vector2(transform.position.x, transform.position.y) + Random.insideUnitCircle * spawnRadius;        
+
+        Instantiate(trashToSpawn, trashPosition, Quaternion.identity);          
     }
-
 
 }

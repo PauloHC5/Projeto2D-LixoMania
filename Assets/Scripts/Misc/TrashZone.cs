@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashBagSpawner : MonoBehaviour, IInteractable
+public class TrashZone : MonoBehaviour, IInteractable
 {
-    [SerializeField]
-    int spriteListIndex = 0;
+    [SerializeField] private int spriteListIndex = 0;
 
     public List<Sprite> sprites;
 
@@ -13,7 +12,7 @@ public class TrashBagSpawner : MonoBehaviour, IInteractable
 
     private GameObject trashBag;
 
-    private bool isAccumulated;
+    private bool isAccumulated = false;
 
     public bool IsAccumulated { get { return isAccumulated; } }
 
@@ -38,7 +37,7 @@ public class TrashBagSpawner : MonoBehaviour, IInteractable
             spriteRenderer.sprite = sprites[spriteListIndex];
         }
 
-        if (spriteListIndex == sprites.Count)
+        if (sprites.Count != 0 && spriteListIndex == sprites.Count)
         {
             isAccumulated = true;
         }
