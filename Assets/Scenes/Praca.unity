@@ -5259,6 +5259,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &374837649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4154909593428257800, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+  m_PrefabInstance: {fileID: 1028971773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &374837654
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374837649}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2.56, y: 2.56}
+  m_Direction: 1
 --- !u!1 &393320021
 GameObject:
   m_ObjectHideFlags: 0
@@ -13874,6 +13914,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1537993179649578459, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44
+      objectReference: {fileID: 0}
     - target: {fileID: 2010241329080091452, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -13929,7 +13973,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4154909593428257800, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 374837654}
   m_SourcePrefab: {fileID: 100100000, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
 --- !u!1 &1039946972
 GameObject:
