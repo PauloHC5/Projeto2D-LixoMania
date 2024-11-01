@@ -1,34 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TrashZoneSpawner : MonoBehaviour
-{    
-    [SerializeField] private int trashSpawnTimer = 1;
-    [SerializeField] private float spawnRadius = 1.0f;    
+{
+    [SerializeField] private float trashSpawnTimer = 1f;
+    [SerializeField] private int zoneMaxTrash = 50;
 
-    private TrashZone trashZone;    
+    private int trashsInTheZoneCount = 0;
+    private bool isCoroutineReady = false;    
+
+    private TrashZone trashZone;
+    private CapsuleCollider2D capsuleCollider;
 
     void Awake()
     {
-        trashZone = GetComponentInParent<TrashZone>();        
-    }
+        trashZone = GetComponentInParent<TrashZone>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
+    }        
 
     private void Update()
     {
-        if(trashZone.IsAccumulated)
-        {
-            InvokeRepeating(nameof(SpawnTrashInTheZone), trashSpawnTimer, trashSpawnTimer);
-        }
+        if (trashZone.IsAccumulated && !isCoroutineReady && trashsInTheZoneCount < zoneMaxTrash) StartCoroutine(SpawnTrashInTheZoneRoutine());        
     }
 
-    private void SpawnTrashInTheZone()
+    private IEnumerator SpawnTrashInTheZoneRoutine()
+    {        
+        isCoroutineReady = true;
+
+        GameObject trashToSpawn = Resources.Load<GameObject>("lataDeCoca");
+        Vector2 trashPosition = RandomPointInBounds(capsuleCollider.bounds);
+        Instantiate(trashToSpawn, trashPosition, Quaternion.identity);
+
+        yield return new WaitForSeconds(trashSpawnTimer);
+
+        if (trashsInTheZoneCount < zoneMaxTrash)
+        {
+            yield return SpawnTrashInTheZoneRoutine();
+        }
+        else
+        {
+            isCoroutineReady = false;
+        }
+            
+    }    
+
+    private Vector2 RandomPointInBounds(Bounds bounds)
     {
-        GameObject trashToSpawn = Resources.Load<GameObject>("lataDeCoca");        
+        return new Vector2(
+            Random.Range(bounds.min.x, bounds.max.x),
+            Random.Range(bounds.min.y, bounds.max.y)
+        );
+    }
 
-        Vector2 trashPosition = new Vector2(transform.position.x, transform.position.y) + Random.insideUnitCircle * spawnRadius;        
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        trashsInTheZoneCount++;
+    }
 
-        Instantiate(trashToSpawn, trashPosition, Quaternion.identity);          
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        trashsInTheZoneCount--;
     }
 
 }

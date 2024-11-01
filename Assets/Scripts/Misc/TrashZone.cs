@@ -37,14 +37,8 @@ public class TrashZone : MonoBehaviour, IInteractable
             spriteRenderer.sprite = sprites[spriteListIndex];
         }
 
-        if (sprites.Count != 0 && spriteListIndex == sprites.Count)
-        {
-            isAccumulated = true;
-        }
-        else
-        {
-            isAccumulated = false;
-        }
+        if (sprites.Count != 0 && spriteListIndex >= sprites.Count) isAccumulated = true;       
+        else isAccumulated = false;        
     }    
 
     private void ChangeSprite()
