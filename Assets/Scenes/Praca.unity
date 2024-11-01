@@ -763,6 +763,7 @@ GameObject:
   - component: {fileID: 64438974}
   - component: {fileID: 64438973}
   - component: {fileID: 64438975}
+  - component: {fileID: 64438976}
   m_Layer: 8
   m_Name: garrafaDeVidro
   m_TagString: trash
@@ -831,7 +832,7 @@ Transform:
   m_GameObject: {fileID: 64438972}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7076981, w: 0.706515}
-  m_LocalPosition: {x: 54.43, y: 1.9, z: 0}
+  m_LocalPosition: {x: 54.417084, y: 1.7429994, z: 0}
   m_LocalScale: {x: 1.5000001, y: 1.5000001, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -883,6 +884,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!50 &64438976
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64438972}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &73400209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1801,7 @@ GameObject:
   - component: {fileID: 133129351}
   - component: {fileID: 133129352}
   - component: {fileID: 133129353}
+  - component: {fileID: 133129354}
   m_Layer: 8
   m_Name: sacolaDePlastico (1)
   m_TagString: trash
@@ -1789,7 +1818,7 @@ Transform:
   m_GameObject: {fileID: 133129350}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.3967346, w: 0.9179334}
-  m_LocalPosition: {x: 56.336, y: 2.821, z: 0}
+  m_LocalPosition: {x: 56.323082, y: 2.6639996, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1893,6 +1922,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!50 &133129354
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133129350}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &141656925
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,6 +3224,7 @@ GameObject:
   - component: {fileID: 234668043}
   - component: {fileID: 234668044}
   - component: {fileID: 234668045}
+  - component: {fileID: 234668046}
   m_Layer: 8
   m_Name: sacolaDePlastico
   m_TagString: trash
@@ -3184,7 +3241,7 @@ Transform:
   m_GameObject: {fileID: 234668042}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.9215498, w: 0.38826022}
-  m_LocalPosition: {x: 56.198997, y: 2.0930002, z: 0}
+  m_LocalPosition: {x: 56.18608, y: 1.9359996, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3288,6 +3345,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!50 &234668046
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234668042}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &247147078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6675,7 +6759,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.21
+  orthographic size: 6.79
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13874,6 +13958,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4066724291154934649, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7540106
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066724291154934649, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+      propertyPath: m_Size.y
+      value: 0.06355745
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066724291154934649, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.017005295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066724291154934649, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.013568689
+      objectReference: {fileID: 0}
     - target: {fileID: 4341095294668013065, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_Name
       value: sacosDeLixo (1)
@@ -15895,6 +15995,7 @@ GameObject:
   - component: {fileID: 1155080776}
   - component: {fileID: 1155080775}
   - component: {fileID: 1155080777}
+  - component: {fileID: 1155080778}
   m_Layer: 8
   m_Name: lataDePepsi
   m_TagString: trash
@@ -15963,7 +16064,7 @@ Transform:
   m_GameObject: {fileID: 1155080774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.4407272, w: 0.8976412}
-  m_LocalPosition: {x: 55.517914, y: 2.673, z: 0}
+  m_LocalPosition: {x: 55.505, y: 2.516, z: 0}
   m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16015,6 +16116,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!50 &1155080778
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155080774}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1159761164
 GameObject:
   m_ObjectHideFlags: 0
@@ -23345,6 +23473,7 @@ GameObject:
   - component: {fileID: 1640836028}
   - component: {fileID: 1640836029}
   - component: {fileID: 1640836030}
+  - component: {fileID: 1640836031}
   m_Layer: 8
   m_Name: garrafaDeVidro (1)
   m_TagString: trash
@@ -23361,7 +23490,7 @@ Transform:
   m_GameObject: {fileID: 1640836027}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7124199, w: 0.7017535}
-  m_LocalPosition: {x: 55.33191, y: 1.8660002, z: 0}
+  m_LocalPosition: {x: 55.318993, y: 1.7089996, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23465,6 +23594,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!50 &1640836031
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640836027}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1648144949
 GameObject:
   m_ObjectHideFlags: 0
@@ -23696,6 +23852,7 @@ GameObject:
   - component: {fileID: 1652710343}
   - component: {fileID: 1652710344}
   - component: {fileID: 1652710345}
+  - component: {fileID: 1652710346}
   m_Layer: 8
   m_Name: banana
   m_TagString: trash
@@ -23712,7 +23869,7 @@ Transform:
   m_GameObject: {fileID: 1652710342}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.909996, y: 3.31, z: 0}
+  m_LocalPosition: {x: 54.89708, y: 3.1529994, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23816,6 +23973,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!50 &1652710346
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652710342}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1655496761
 GameObject:
   m_ObjectHideFlags: 0
