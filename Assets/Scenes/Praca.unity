@@ -21523,63 +21523,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1449644333
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4341095294668013065, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_Name
-      value: sacosDeLixo (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.747748
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -16.064526
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
 --- !u!1 &1456134643
 GameObject:
   m_ObjectHideFlags: 0
@@ -34004,11 +33947,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 69385139109195284, guid: 0300d2e79ac28584da8fe79408ed8ebb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.29
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 69385139109195284, guid: 0300d2e79ac28584da8fe79408ed8ebb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.29
+      value: 23.35
       objectReference: {fileID: 0}
     - target: {fileID: 69385139109195284, guid: 0300d2e79ac28584da8fe79408ed8ebb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34120,17 +34063,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1537993179649578459, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.799
+      objectReference: {fileID: 0}
     - target: {fileID: 4341095294668013065, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_Name
       value: sacosDeLixo
       objectReference: {fileID: 0}
     - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.59
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.55
+      value: -24.83
       objectReference: {fileID: 0}
     - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -34303,7 +34250,6 @@ SceneRoots:
   - {fileID: 587133354}
   - {fileID: 1392953186}
   - {fileID: 1028971773}
-  - {fileID: 1449644333}
   - {fileID: 1266709367}
   - {fileID: 2035507010}
   - {fileID: 1306484594}
