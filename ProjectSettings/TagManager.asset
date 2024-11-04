@@ -19,7 +19,7 @@ TagManager:
   - Player
   - FadeObjects
   - Trash
-  - 
+  - hud
   - 
   - 
   - 
@@ -51,4 +51,7 @@ TagManager:
     locked: 0
   - name: Leafs
     uniqueID: 3773801851
+    locked: 0
+  - name: hud
+    uniqueID: 2649682013
     locked: 0
