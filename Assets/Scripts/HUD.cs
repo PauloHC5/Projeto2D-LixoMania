@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {    
     public RectMask2D trashHUDMask;
+    public Slider healthSlider;
 
     [Range(0f, 200)]
     [SerializeField] private int trashHUDMaskRange;
@@ -14,11 +15,13 @@ public class HUD : MonoBehaviour
     private GameObject player;
 
     private PlayerTrashCollection trashCollection;
+    private PlayerHealth playerHealth;
 
     void Awake()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         trashCollection = player.GetComponentInChildren<PlayerTrashCollection>();
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     // Start is called before the first frame update
@@ -30,6 +33,7 @@ public class HUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        trashHUDMask.padding = new Vector4(0, trashCollection.TrashCollected * 20, 0, 0);        
+        trashHUDMask.padding = new Vector4(0, trashCollection.TrashCollected * 20, 0, 0);
+        healthSlider.value = playerHealth.Health;
     }
 }

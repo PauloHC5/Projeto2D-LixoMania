@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private float health = 3f;
+    [SerializeField] private float health = 10f;
     [SerializeField] private bool targeatable = true;
     
     public float Health { get=> health; set { health = value > 0 ? value : health; } }
