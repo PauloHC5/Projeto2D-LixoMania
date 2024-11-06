@@ -59,7 +59,7 @@ public class TrashZone : MonoBehaviour, IInteractable
         {
             trashBagsAmount--;
 
-            GameObject spawnedTrashBag = Instantiate(Resources.Load<GameObject>("sacoDeLixo"));
+            GameObject spawnedTrashBag = Instantiate(Resources.Load<GameObject>("Lixos/sacoDeLixo"));
 
             spawnedTrashBag.GetComponent<IInteractable>().Interact();
 
@@ -74,7 +74,7 @@ public class TrashZone : MonoBehaviour, IInteractable
     {
         isCoroutineReady = true;
 
-        string trashToSpawnName = ChooseRandomTrash();
+        string trashToSpawnName = "Lixos/" + ChooseRandomTrash();
 
         GameObject trashToSpawn = Resources.Load<GameObject>(trashToSpawnName);
 
