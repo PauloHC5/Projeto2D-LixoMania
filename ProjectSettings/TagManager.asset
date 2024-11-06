@@ -9,6 +9,7 @@ TagManager:
   - trash
   - npc
   - TrashCan
+  - Zones
   layers:
   - Default
   - TransparentFX
