@@ -2,20 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
-{
-    public TextMeshProUGUI trashCollectedTxt;
-    public TextMeshProUGUI trashMaxCapacityTxt;
-    
+{    
+    public RectMask2D trashHUDMask;
+    public Slider healthSlider;
+
+    [Range(0f, 200)]
+    [SerializeField] private int trashHUDMaskRange;
+
     private GameObject player;
 
     private PlayerTrashCollection trashCollection;
+    private PlayerHealth playerHealth;
 
     void Awake()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         trashCollection = player.GetComponentInChildren<PlayerTrashCollection>();
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     // Start is called before the first frame update
@@ -26,8 +32,8 @@ public class HUD : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        trashCollectedTxt.SetText(trashCollection.TrashCollected.ToString());
-        trashMaxCapacityTxt.SetText(trashCollection.TrashMaxCapacity.ToString());
+    {        
+        trashHUDMask.padding = new Vector4(0, trashCollection.TrashCollected * 20, 0, 0);
+        healthSlider.value = playerHealth.Health;
     }
 }

@@ -16,12 +16,12 @@ public class PlayerInteract : MonoBehaviour
 
         set 
         {            
-            IInteractable interactable = value.GetComponent<IInteractable>();
+            GameObject interactable = value.GetComponent<IInteractable>().Interact();                      
 
             if (interactable != null)
             {
                 holdPos.gameObject.SetActive(true);
-                objectHold = interactable.Interact();                                
+                objectHold = interactable;                                
             }
         }
     }
@@ -56,7 +56,7 @@ public class PlayerInteract : MonoBehaviour
         {
             RaycastHit2D hitResult = ProjectRaycast();            
             
-            if (!hitResult.collider.isTrigger) ObjectHold = hitResult.collider.gameObject;
+            if (hitResult.collider != null) ObjectHold = hitResult.collider.gameObject;
         }
         else
         {

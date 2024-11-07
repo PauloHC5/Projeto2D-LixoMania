@@ -15,6 +15,8 @@ public class NPC : MonoBehaviour
     [SerializeField] private float changeDirectionTime = 2f;
     private float timer = 0f;
 
+    public float minTimeDirection = 2.0f;
+
     // Movement direction
     private Vector2 direction;
 
@@ -147,7 +149,15 @@ public class NPC : MonoBehaviour
     // Handle collision with obstacles or NPCs
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Change direction when colliding with an obstacle                      
-        direction = (collision.contacts[0].normal).normalized;        
+        // Change direction when colliding with an obstacle
+        if (timer >= minTimeDirection)
+        {
+            direction = (collision.contacts[0].normal).normalized;
+        }
+        else
+        {
+            timer = 0f;
+            ChooseRandomDirection();
+        }
     }
 }

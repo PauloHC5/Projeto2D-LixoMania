@@ -7,6 +7,8 @@ public class TrashBag : MonoBehaviour, IThrowingObject, IInteractable
     Rigidbody2D rb;   
     Collider2D col;
     SpriteRenderer spriteRenderer;
+
+    private bool canInteract = true;    
     
     void Awake()
     {
@@ -16,25 +18,32 @@ public class TrashBag : MonoBehaviour, IThrowingObject, IInteractable
     }    
 
     public void Throw(Vector2 direction, float throwForce)
-    {        
+    {
+        canInteract = false;
         rb.AddForce(direction * throwForce);
-        rb.gravityScale = 2f;
+        rb.gravityScale = 2f;        
 
         Invoke(nameof(DisableGravity), 0.5f);
     }
 
     void DisableGravity()
-    {
+    {        
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
-        spriteRenderer.sortingLayerName = "Default";        
+        spriteRenderer.sortingLayerName = "Default";
+        canInteract = true;
     }
 
     public GameObject Interact()
     {
-        col.isTrigger = true;
+        if(canInteract)
+        {
+            col.isTrigger = true;
 
-        return gameObject;
+            return gameObject;
+        }
+
+        return null;        
     }    
 
     private void OnTriggerEnter2D(Collider2D collision)
