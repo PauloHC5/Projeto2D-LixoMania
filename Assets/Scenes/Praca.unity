@@ -3002,7 +3002,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 192428202}
-  - component: {fileID: 192428201}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3010,18 +3009,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &192428201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192428200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d82d3a0bed9a24989f4e0173770b19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &192428202
 Transform:
   m_ObjectHideFlags: 0
@@ -3704,9 +3691,10 @@ GameObject:
   m_Component:
   - component: {fileID: 249549990}
   - component: {fileID: 249549991}
-  m_Layer: 0
+  - component: {fileID: 249549992}
+  m_Layer: 10
   m_Name: Zone (7)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3771,6 +3759,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 22.332167, y: 2.036152}
   m_EdgeRadius: 0
+--- !u!114 &249549992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249549989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &251727669
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,9 +4376,10 @@ GameObject:
   m_Component:
   - component: {fileID: 284904887}
   - component: {fileID: 284904888}
-  m_Layer: 0
+  - component: {fileID: 284904889}
+  m_Layer: 10
   m_Name: Zone (3)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4441,6 +4444,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.311951, y: 3.1235256}
   m_EdgeRadius: 0
+--- !u!114 &284904889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284904886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &287882815
 GameObject:
   m_ObjectHideFlags: 0
@@ -5791,9 +5808,10 @@ GameObject:
   m_Component:
   - component: {fileID: 340955768}
   - component: {fileID: 340955769}
-  m_Layer: 0
+  - component: {fileID: 340955770}
+  m_Layer: 10
   m_Name: Zone (2)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5858,6 +5876,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.187614, y: 4.712471}
   m_EdgeRadius: 0
+--- !u!114 &340955770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340955767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &355065177
 GameObject:
   m_ObjectHideFlags: 0
@@ -12529,9 +12561,10 @@ GameObject:
   m_Component:
   - component: {fileID: 836907178}
   - component: {fileID: 836907179}
-  m_Layer: 0
+  - component: {fileID: 836907180}
+  m_Layer: 10
   m_Name: Zone (9)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12596,6 +12629,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.6589136, y: 31.96451}
   m_EdgeRadius: 0
+--- !u!114 &836907180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836907177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &837249198
 GameObject:
   m_ObjectHideFlags: 0
@@ -13133,9 +13180,10 @@ GameObject:
   m_Component:
   - component: {fileID: 865303438}
   - component: {fileID: 865303439}
-  m_Layer: 0
+  - component: {fileID: 865303440}
+  m_Layer: 10
   m_Name: Zone (8)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13200,6 +13248,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16.631659, y: 4.1669235}
   m_EdgeRadius: 0
+--- !u!114 &865303440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865303437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &867620434
 GameObject:
   m_ObjectHideFlags: 0
@@ -14381,8 +14443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4776da9a7764044185776b1ee56ef7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 2
-  maxSpawnTime: 5
+  minSpawnTime: 0.5
+  maxSpawnTime: 0.5
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &947760293
 GameObject:
@@ -15209,10 +15271,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4154909593428257800, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_TagString
-      value: TrashCan
-      objectReference: {fileID: 0}
     - target: {fileID: 4341095294668013065, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_Name
       value: sacosDeLixo (1)
@@ -15256,26 +15314,6 @@ PrefabInstance:
     - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7212011498939895976, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8886018093073919468, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_Size.x
-      value: 5.8705974
-      objectReference: {fileID: 0}
-    - target: {fileID: 8886018093073919468, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_Size.y
-      value: 7.542551
-      objectReference: {fileID: 0}
-    - target: {fileID: 8886018093073919468, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_Offset.x
-      value: 1.3695533
-      objectReference: {fileID: 0}
-    - target: {fileID: 8886018093073919468, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_Offset.y
-      value: -1.883995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17023,9 +17061,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1151860911}
   - component: {fileID: 1151860912}
-  m_Layer: 0
+  - component: {fileID: 1151860913}
+  m_Layer: 10
   m_Name: Zone (6)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17090,6 +17129,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 29.54628, y: 2.841032}
   m_EdgeRadius: 0
+--- !u!114 &1151860913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151860910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &1152269632
 GameObject:
   m_ObjectHideFlags: 0
@@ -17755,9 +17808,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1173267187}
   - component: {fileID: 1173267188}
-  m_Layer: 0
+  - component: {fileID: 1173267189}
+  m_Layer: 10
   m_Name: Zone (10)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17822,6 +17876,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.6589136, y: 34.092}
   m_EdgeRadius: 0
+--- !u!114 &1173267189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173267186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &1181200206
 GameObject:
   m_ObjectHideFlags: 0
@@ -18032,9 +18100,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1209434734}
   - component: {fileID: 1209434735}
-  m_Layer: 0
+  - component: {fileID: 1209434736}
+  m_Layer: 10
   m_Name: Zone (5)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18099,6 +18168,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.994882, y: 12.807556}
   m_EdgeRadius: 0
+--- !u!114 &1209434736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209434733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &1214061792
 GameObject:
   m_ObjectHideFlags: 0
@@ -23796,8 +23879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4776da9a7764044185776b1ee56ef7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 2
-  maxSpawnTime: 5
+  minSpawnTime: 0.5
+  maxSpawnTime: 0.5
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1581305554
 GameObject:
@@ -24753,9 +24836,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1626458098}
   - component: {fileID: 1626458099}
-  m_Layer: 0
+  - component: {fileID: 1626458100}
+  m_Layer: 10
   m_Name: Zone (4)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24820,6 +24904,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.994882, y: 12.807556}
   m_EdgeRadius: 0
+--- !u!114 &1626458100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626458097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &1627116350
 GameObject:
   m_ObjectHideFlags: 0
@@ -25875,8 +25973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4776da9a7764044185776b1ee56ef7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 2
-  maxSpawnTime: 5
+  minSpawnTime: 0.5
+  maxSpawnTime: 0.5
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1689431805
 GameObject:
@@ -26825,9 +26923,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1747681147}
   - component: {fileID: 1747681148}
-  m_Layer: 0
+  - component: {fileID: 1747681149}
+  m_Layer: 10
   m_Name: Zone (1)
-  m_TagString: Zones
+  m_TagString: Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26892,6 +26991,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.137485, y: 9.813165}
   m_EdgeRadius: 0
+--- !u!114 &1747681149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747681146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoneMaxTrash: 50
+  trashsInTheZoneCount: 0
 --- !u!1 &1759952804
 GameObject:
   m_ObjectHideFlags: 0
@@ -27217,8 +27330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4776da9a7764044185776b1ee56ef7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 2
-  maxSpawnTime: 5
+  minSpawnTime: 0.5
+  maxSpawnTime: 0.5
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1769968563
 GameObject:
@@ -30126,8 +30239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4776da9a7764044185776b1ee56ef7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 2
-  maxSpawnTime: 5
+  minSpawnTime: 0.5
+  maxSpawnTime: 0.5
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1963456253
 GameObject:
@@ -31210,8 +31323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4776da9a7764044185776b1ee56ef7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpawnTime: 2
-  maxSpawnTime: 5
+  minSpawnTime: 0.5
+  maxSpawnTime: 0.5
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &2024864353
 GameObject:
@@ -33089,10 +33202,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1537993179649578459, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.799
-      objectReference: {fileID: 0}
     - target: {fileID: 4341095294668013065, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_Name
       value: sacosDeLixo
@@ -33271,11 +33380,11 @@ SceneRoots:
   - {fileID: 1291223152}
   - {fileID: 2595429131583684754}
   - {fileID: 2850402640019182126}
+  - {fileID: 1028971773}
   - {fileID: 312195921}
   - {fileID: 2466590249128137643}
   - {fileID: 587133354}
   - {fileID: 1392953186}
-  - {fileID: 1028971773}
   - {fileID: 1266709367}
   - {fileID: 2035507010}
   - {fileID: 1306484594}

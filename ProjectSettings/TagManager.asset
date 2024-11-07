@@ -9,7 +9,7 @@ TagManager:
   - trash
   - npc
   - TrashCan
-  - Zones
+  - Zone
   layers:
   - Default
   - TransparentFX
@@ -21,7 +21,7 @@ TagManager:
   - FadeObjects
   - Trash
   - hud
-  - 
+  - Zones
   - 
   - 
   - 
