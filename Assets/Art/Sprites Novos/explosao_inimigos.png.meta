@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1fba6cd45ea806a4385cd7aa34399f97
+guid: 5f02b2b9131a07044b095592d1d5786b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,13 +110,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lixeira_abrindo_tampa_0
+      name: explosao_inimigos_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fee301adb675334db4b557dffb3a757
+      internalID: 74835928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosao_inimigos_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 66
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5280e4f9b514571408a32520daa81e93
+      internalID: -1911661209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosao_inimigos_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 66
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76af1717a461714988e0d067b61759e
+      internalID: -1918474806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosao_inimigos_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cddd03143012cd428da113d4bfb8a9a
+      internalID: 1134790170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosao_inimigos_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 33
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b603503114ec5348b132a2957c81878
+      internalID: -1002846761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosao_inimigos_5
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 33
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ee1ab93d261b74f911f24675d9a294
+      internalID: 226712060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosao_inimigos_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 90
-        height: 90
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 771724b471727164a99c6f1d07d9b7d1
-      internalID: -1928692338
+      spriteID: c376aa0d69033fc4296c6b405eb351a8
+      internalID: 879159461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lixeira_abrindo_tampa_1
+      name: explosao_inimigos_7
       rect:
         serializedVersion: 2
-        x: 90
+        x: 33
         y: 0
-        width: 90
-        height: 90
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2b831bf04152594faedbd8e9bd9431d
-      internalID: -1935719228
+      spriteID: 6e2f5e63836f4ae49aa9714cfbde6017
+      internalID: 397667060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lixeira_abrindo_tampa_2
+      name: explosao_inimigos_8
       rect:
         serializedVersion: 2
-        x: 180
+        x: 66
         y: 0
-        width: 90
-        height: 90
+        width: 33
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cf8166736ac8484195478687e3b8855
-      internalID: 2062908833
+      spriteID: 1f7e4f11acb77be488942ecdea892a4a
+      internalID: 1614995977
       vertices: []
       indices: 
       edges: []
@@ -183,9 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lixeira_abrindo_tampa_0: -1928692338
-      lixeira_abrindo_tampa_1: -1935719228
-      lixeira_abrindo_tampa_2: 2062908833
+      explosao_inimigos_0: 74835928
+      explosao_inimigos_1: -1911661209
+      explosao_inimigos_2: -1918474806
+      explosao_inimigos_3: 1134790170
+      explosao_inimigos_4: -1002846761
+      explosao_inimigos_5: 226712060
+      explosao_inimigos_6: 879159461
+      explosao_inimigos_7: 397667060
+      explosao_inimigos_8: 1614995977
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
