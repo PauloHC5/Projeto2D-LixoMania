@@ -7,6 +7,8 @@ public class TrashDump : MonoBehaviour, IInteractable
     [Range(0, 6)]
     [SerializeField] private int trashBagsAmount = 0;
 
+    [SerializeField] private float timeToAddTragBag = 15;
+
     [SerializeField] private float trashSpawnTimer = 1f;    
     
     private bool isCoroutineReady = false;
@@ -27,7 +29,7 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     void Start()
     {
-        InvokeRepeating(nameof(ChangeSprite), 15, 15);
+        InvokeRepeating(nameof(ChangeSprite), timeToAddTragBag, timeToAddTragBag);
     }
 
     private void ChangeSprite()
