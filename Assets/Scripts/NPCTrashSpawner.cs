@@ -4,10 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 public class NPCTrashSpawner : MonoBehaviour
-{
-    // List to hold all trash items in the scene
-    private List<GameObject> trashItems = new List<GameObject>();
-
+{   
     // Time interval range for spawning trash (min and max delay between spawns)
     public float minSpawnTime = 2f;
     public float maxSpawnTime = 5f;
@@ -17,14 +14,7 @@ public class NPCTrashSpawner : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
-        // Find all objects tagged as "trash" in the scene and add them to the list
-        GameObject[] trashObjects = GameObject.FindGameObjectsWithTag("trash");
-        foreach (GameObject trash in trashObjects)
-        {            
-            trashItems.Add(trash); 
-        }
-
+    {        
         // Start the trash spawn routine
         StartCoroutine(SpawnTrashRoutine());
     }
@@ -46,22 +36,13 @@ public class NPCTrashSpawner : MonoBehaviour
     // Method to spawn a random trash item
     void SpawnTrash()
     {
-        if (trashItems.Count == 0)
+        GameObject trashSpawned = TrashSpawnManager.Instance.TrashToSpawn();
+
+        if (trashSpawned != null)
         {
-            Debug.LogWarning("No trash items found in the scene!");
-            return;
-        }
-
-        // Choose a random trash item from the list
-        int randomIndex = Random.Range(0, trashItems.Count);        
-        
-        GameObject trashToSpawn = (GameObject)trashItems[randomIndex];
-
-        // Get the position and rotation of the selected trash item
-        Vector3 spawnPosition = transform.position + spawnOffset;
-        Quaternion spawnRotation = trashToSpawn.transform.rotation;
-
-        // Instantiate the trash item with its original rotation
-        Instantiate(trashToSpawn, spawnPosition, spawnRotation);                
+            // Get the position and rotation of the selected trash item
+            Vector3 spawnPosition = transform.position + spawnOffset;            
+            trashSpawned.transform.position = spawnPosition;
+        }                     
     }
 }
