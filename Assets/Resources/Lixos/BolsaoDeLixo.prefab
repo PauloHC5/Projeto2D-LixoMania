@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8019856225467025296
 Transform:
   m_ObjectHideFlags: 0
@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3371143738117713774
 Transform:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1628944334373087896
 Transform:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6960077181777364424
 Transform:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5393391168586887559
 Transform:
   m_ObjectHideFlags: 0
@@ -588,21 +588,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c94cccec85aa434ea170c27759e2d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashBagsAmount: 10
-  trashSpawnTimer: 3
-  sprites:
+  trashBagsAmount: 6
+  trashSpawnTimer: 1
+  trasgBagsSprites:
   - {fileID: 0}
   - {fileID: 3851396724141123130, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
   - {fileID: 3038373688905630820, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
   - {fileID: -5795306344514492869, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
   - {fileID: -6927899042158135659, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
   - {fileID: -6072956879060983902, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: 7903413698013189215, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: -7559059137313551824, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: 3815053125510696804, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: -8487010571583255783, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: 7367152204055848966, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
-  - {fileID: -8818056760300160889, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
+  trashBagsShadows:
+  - {fileID: 5216541803449867405}
+  - {fileID: 3554810005351624128}
+  - {fileID: 2451245193590921930}
+  - {fileID: 1865925774776735082}
+  - {fileID: 1838883112560212147}
+  - {fileID: 2229126495384871094}
 --- !u!1 &5216541803449867405
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,7 +620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8751511213688473456
 Transform:
   m_ObjectHideFlags: 0
@@ -703,7 +704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4645843504100152929
 Transform:
   m_ObjectHideFlags: 0
