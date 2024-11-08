@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 5331021929073706572}
   m_Layer: 3
   m_Name: BolsaoDeLixo
-  m_TagString: trash
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -503,7 +503,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -7559059137313551824, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
   m_Color: {r: 0.5226415, g: 0.58257717, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -511,7 +511,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 0.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!70 &7212011498939895976
@@ -588,8 +588,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c94cccec85aa434ea170c27759e2d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashBagsAmount: 6
-  trashSpawnTimer: 1
+  trashBagsAmount: 0
+  timeToAddTragBag: 15
+  trashSpawnTimer: 20
   trasgBagsSprites:
   - {fileID: 0}
   - {fileID: 3851396724141123130, guid: 102859b381bcf654ab463b71f06c252e, type: 3}

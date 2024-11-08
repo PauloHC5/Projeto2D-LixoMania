@@ -8,14 +8,16 @@ public class TrashSpawnManager : MonoBehaviour
 
     public static TrashSpawnManager Instance { get { return instance; } }
 
-    [SerializeField] private int zoneMaxTrash = 50;
+    [SerializeField] private static int zoneMaxTrash = 200;
 
-    [SerializeField] protected int trashsInTheZoneCount = 0;
+    [SerializeField] protected static int trashsInTheZoneCount = 0;    
+
+    public static int TrashsInTheZone { get { return trashsInTheZoneCount; } }
 
     private void Awake()
     {
         instance = this;
-    }
+    }    
 
     public GameObject TrashToSpawn()
     {        
