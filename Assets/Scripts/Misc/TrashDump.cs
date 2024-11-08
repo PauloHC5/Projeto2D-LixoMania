@@ -58,16 +58,26 @@ public class TrashDump : MonoBehaviour, IInteractable
     {
         if (trashBagsAmount > 0)
         {
+            StartCoroutine(RestartInvokeChangeSprite());
+
             trashBagsAmount--;
 
             GameObject spawnedTrashBag = Instantiate(Resources.Load<GameObject>("Lixos/sacoDeLixo"));
 
-            spawnedTrashBag.GetComponent<IInteractable>().Interact();
+            spawnedTrashBag.GetComponent<IInteractable>().Interact();            
 
             return spawnedTrashBag;
         }
 
         return null;
+
+    }
+
+    private IEnumerator RestartInvokeChangeSprite()
+    {
+        CancelInvoke(nameof(ChangeSprite));
+        yield return new WaitForSeconds(60);
+        InvokeRepeating(nameof(ChangeSprite), timeToAddTragBag, timeToAddTragBag);
 
     }
 
