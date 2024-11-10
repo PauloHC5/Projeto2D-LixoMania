@@ -20,7 +20,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             health = value;
             if (health <= 0) Defeated();            
             else
-            {
+            {                
                 if(animator) animator.SetTrigger(takeDamage);
                 if(npc != null) npc.StunNPC();
             }

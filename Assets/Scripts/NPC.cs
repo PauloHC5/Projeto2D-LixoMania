@@ -4,7 +4,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     // Movement speed
-    [SerializeField] private float speed = 2f;
+    [SerializeField] protected float speed = 2f;
     [SerializeField] private float stunTime = 2f;
 
     // Boundaries for the movement area
@@ -42,7 +42,7 @@ public class NPC : MonoBehaviour
     void Start()
     {
         // Store the original scale of the object
-        originalScale = transform.localScale;
+        originalScale = transform.localScale;        
 
         // Start with a random direction
         ChooseRandomDirection();        

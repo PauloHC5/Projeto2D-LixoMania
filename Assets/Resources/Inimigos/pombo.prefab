@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7992194223793043868}
   - component: {fileID: 131487199058803565}
   - component: {fileID: 1293541066641854212}
-  - component: {fileID: 4309353262148359090}
+  - component: {fileID: 4803498814287996606}
   - component: {fileID: 5718781121347301025}
   m_Layer: 11
   m_Name: pombo
@@ -112,7 +112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3012814266586296876}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -194,7 +194,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4309353262148359090
+--- !u!114 &4803498814287996606
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3012814266586296876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed29f43f241bc9f4b82fff007c870cc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 08502ee7b61e0eb4f9df011fc82715d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
@@ -215,6 +215,8 @@ MonoBehaviour:
   changeDirectionTime: 2
   minTimeDirection: 2
   shadowChild: {fileID: 8056059944844458056}
+  damage: 1
+  knockbackForce: 200
 --- !u!114 &5718781121347301025
 MonoBehaviour:
   m_ObjectHideFlags: 0
