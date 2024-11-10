@@ -14744,7 +14744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpawnTime: 10
-  maxSpawnTime: 30
+  maxSpawnTime: 20
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &947760293
 GameObject:
@@ -15574,6 +15574,10 @@ PrefabInstance:
     - target: {fileID: 4341095294668013065, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_Name
       value: sacosDeLixo (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331021929073706572, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+      propertyPath: timeToAddTragBag
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24193,7 +24197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpawnTime: 10
-  maxSpawnTime: 30
+  maxSpawnTime: 20
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1581305554
 GameObject:
@@ -26420,7 +26424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpawnTime: 10
-  maxSpawnTime: 30
+  maxSpawnTime: 20
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1689431805
 GameObject:
@@ -27836,7 +27840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpawnTime: 10
-  maxSpawnTime: 30
+  maxSpawnTime: 20
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1769968563
 GameObject:
@@ -30953,7 +30957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpawnTime: 10
-  maxSpawnTime: 30
+  maxSpawnTime: 20
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1963456253
 GameObject:
@@ -32145,7 +32149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSpawnTime: 10
-  maxSpawnTime: 30
+  maxSpawnTime: 20
   spawnOffset: {x: 0, y: -0.5, z: 0}
 --- !u!1 &2024864353
 GameObject:
