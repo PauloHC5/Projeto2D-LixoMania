@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTime: 3
+  maxEnemiesSpawn: 10
   enemies:
   - {fileID: 3088933425158938567, guid: 12e57d911bf116e4a99faa2b0a296a5f, type: 3}
   - {fileID: 3012814266586296876, guid: 98b90725553eb0343a80169dc332b57a, type: 3}
