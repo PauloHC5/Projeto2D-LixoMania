@@ -36,7 +36,7 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     private void ChangeSprite()
     {
-        trashBagsAmount++;
+        if(trashBagsAmount < trasgBagsSprites.Count) trashBagsAmount++;
     }
 
     // Update is called once per frame
