@@ -22737,12 +22737,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4bbddb51ec02cf47bfea8b6048d69a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  play: {fileID: 629184709}
+  title: {fileID: 1880651484}
+  restart: {fileID: 629184709}
   exit: {fileID: 1084151629}
   playSelectedColor: {r: 1, g: 0.40945286, b: 0, a: 1}
   exitSelectedColor: {r: 1, g: 0.40784317, b: 0, a: 1}
   optionsIndex: 0
-  waitToLoadTime: 2
+  waitToLoadTime: 1
 --- !u!1 &1515365234
 GameObject:
   m_ObjectHideFlags: 0
