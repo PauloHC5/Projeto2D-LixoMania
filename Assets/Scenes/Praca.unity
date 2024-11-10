@@ -15575,10 +15575,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: sacosDeLixo (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5331021929073706572, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
-      propertyPath: timeToAddTragBag
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.73
@@ -20135,7 +20131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1319740170
 Transform:
   m_ObjectHideFlags: 0
