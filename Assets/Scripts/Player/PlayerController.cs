@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
         trashCollection = GetComponentInChildren<PlayerTrashCollection>();
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     private void Update()
     {
         CheckPlayerOneInputs();               
@@ -111,6 +116,20 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    private void PauseGame()
+    {
+        if (PauseMenu.Instance.gameObject.activeSelf)
+        {
+            PauseMenu.Instance.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            PauseMenu.Instance.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }            
+    }
+
     void CheckPlayerOneInputs()
     {
         // Player 1 Joystick movement input
@@ -137,5 +156,7 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("Praca");
         }
+
+        if (Input.GetButtonDown("MENU")) PauseGame();
     }
 }

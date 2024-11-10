@@ -15,6 +15,8 @@ public class UIFade : MonoBehaviour
     private void Start()
     {
         Instance = this;
+
+        FadeToClear();
     }
 
     public void FadeToBlack()
