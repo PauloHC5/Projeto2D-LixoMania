@@ -714,6 +714,7 @@ MonoBehaviour:
   playSelectedColor: {r: 0.99215686, g: 0.3623922, b: 0.19215685, a: 1}
   exitSelectedColor: {r: 0.9921569, g: 0.36078432, b: 0.19215688, a: 1}
   optionsIndex: 1
+  waitToLoadTime: 3
 --- !u!114 &760121279
 MonoBehaviour:
   m_ObjectHideFlags: 0
