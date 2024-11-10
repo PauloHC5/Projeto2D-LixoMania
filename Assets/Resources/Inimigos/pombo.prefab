@@ -216,7 +216,7 @@ MonoBehaviour:
   minTimeDirection: 2
   shadowChild: {fileID: 8056059944844458056}
   damage: 1
-  knockbackForce: 200
+  knockbackForce: 20
 --- !u!114 &5718781121347301025
 MonoBehaviour:
   m_ObjectHideFlags: 0

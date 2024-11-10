@@ -83,7 +83,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             //Apply the force to the slime
             rb.AddForce(knockback, ForceMode2D.Impulse);
 
-            invencible = true;            
+            invencible = true;
+
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.takeDamage);
         }
     }
 

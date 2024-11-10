@@ -55,6 +55,8 @@ public class PlayerTrashCollection : MonoBehaviour
             GameObject trashBag = Instantiate(Resources.Load<GameObject>("Lixos/sacoDeLixo"));
             playerInteract.ObjectHold = trashBag;
             trashCollected = 0;
+
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.spawnTrashBag);
         }
     }
 }

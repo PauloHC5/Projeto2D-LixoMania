@@ -62,17 +62,23 @@ public class PlayerController : MonoBehaviour
             IsMoving = true;
 
             animator.SetFloat(moveX, movementInput.x);
-            animator.SetFloat(moveY, movementInput.y);
+            animator.SetFloat(moveY, movementInput.y);            
+
         }             
         else
         {            
             IsMoving = false;
-        }        
+        }
+        
     }    
 
     void OnFire()
-    {                
-        if(canMove && !playerInteract.IsHolding) animator.SetTrigger(Attack);        
+    {
+        if (canMove && !playerInteract.IsHolding)
+        {
+            animator.SetTrigger(Attack);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.attack);
+        }
     }
 
     void OnThrow(GameObject objectHold)
@@ -87,6 +93,8 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger(Throw);
 
             rb.velocity = Vector2.zero;
+
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.spawnTrashBag);
         }
         else Debug.Log("No Object to throw!");        
     }
