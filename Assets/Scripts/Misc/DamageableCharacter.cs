@@ -18,12 +18,8 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         set
         {
             health = value;
-            if (health <= 0) Defeated();            
-            else
-            {                
-                if(animator) animator.SetTrigger(takeDamage);
-                if(npc != null) npc.StunNPC();
-            }
+            if(health > 10) health = 10;
+            if (health <= 0) Defeated();                        
         }
         get { return health; }
     }    
@@ -84,6 +80,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             rb.AddForce(knockback, ForceMode2D.Impulse);
 
             invencible = true;
+
+            if (animator) animator.SetTrigger(takeDamage);
+            if (npc != null) npc.StunNPC();
 
             AudioManager.Instance.PlaySFX(AudioManager.Instance.takeDamage);
         }
