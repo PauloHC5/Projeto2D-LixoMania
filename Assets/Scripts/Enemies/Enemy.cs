@@ -6,20 +6,7 @@ public class Enemy : NPC
 {
     public float damage = 1f;
     public float knockbackForce = 200f;    
-    //public DetectionZone detectionZone;        
     
-
-    /*private void FixedUpdate()
-    {        
-        if (detectionZone.detectedObjs.Count > 0)
-        {
-            Collider2D detectedObject = detectionZone.detectedObjs[0];
-
-            // Move towards detected object
-            Vector2 direction = (detectionZone.detectedObjs[0].transform.position - transform.position).normalized;
-            rb.AddForce(direction * speed, ForceMode2D.Force);
-        }
-    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
