@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
     // Movement speed
-    public float speed = 2f;
+    [SerializeField] private float speed = 2f;
+    [SerializeField] private float stunTime = 2f;
 
     // Boundaries for the movement area
     public float minX = -14.5f;
@@ -28,7 +30,7 @@ public class NPC : MonoBehaviour
 
     // Variable to track the shadow rotation state
     private bool isShadowRotated = false;
-    private bool canMove = true;
+    private bool canMove = true;    
 
     private Rigidbody2D rb;
 
@@ -66,10 +68,27 @@ public class NPC : MonoBehaviour
     private void FixedUpdate()
     {
         // Move the object                
-        Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
-        rb.MovePosition(currentPosition + direction * speed * Time.deltaTime);
+        if(canMove)
+        {
+            Vector2 currentPosition = new Vector2(transform.position.x, transform.position.y);
+            rb.MovePosition(currentPosition + direction * speed * Time.deltaTime);
+        }        
     }
 
+    public void StunNPC()
+    {
+        if (canMove)
+        {
+            canMove = false;
+            StartCoroutine(NPCStunRoutine());
+        }
+    }
+
+    private IEnumerator NPCStunRoutine()
+    {
+        yield return new WaitForSeconds(stunTime);
+        canMove = true;
+    }
     void ChooseRandomDirection()
     {
         // Choose a random direction (8 directions: up, down, left, right, and diagonals)

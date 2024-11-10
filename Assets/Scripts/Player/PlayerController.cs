@@ -8,7 +8,7 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class PlayerController : MonoBehaviour
 {    
-    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] protected float moveSpeed = 10f;
     [SerializeField] private float throwForce = 500f;
 
     private int isMovingKey = Animator.StringToHash("isMoving");
@@ -32,10 +32,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;    
     private bool isMoving = false;    
 
-    protected Vector2 movementInput;
-    protected Animator animator;
-    protected PlayerInteract playerInteract;
-    protected PlayerTrashCollection trashCollection;
+    private Vector2 movementInput;
+    private Animator animator;
+    private PlayerInteract playerInteract;
+    private PlayerTrashCollection trashCollection;
     
     void Awake()
     {

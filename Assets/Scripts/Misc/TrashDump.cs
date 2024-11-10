@@ -20,6 +20,8 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     private bool isAccumulated = false;
 
+    public bool IsAccumulated {  get { return isAccumulated; } }
+
     private Bounds zoneBounds; 
 
     void Awake()

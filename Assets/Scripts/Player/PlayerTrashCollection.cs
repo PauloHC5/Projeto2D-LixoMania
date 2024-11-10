@@ -8,6 +8,10 @@ public class PlayerTrashCollection : MonoBehaviour
 
     [SerializeField] private int trashCollected = 0;
 
+    [SerializeField] private int damage = 1;
+
+    [SerializeField] float knockbackForce = 5f;
+
     private PlayerInteract playerInteract;    
 
     public int TrashMaxCapacity {  get { return trashMaxCapacity; } }
@@ -21,12 +25,27 @@ public class PlayerTrashCollection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        IDamageable damageable = collision.GetComponent<IDamageable>();
+
+        if(damageable != null)
+        {
+            Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
+            Vector2 direction = (Vector2) (collision.gameObject.transform.position - parentPosition).normalized;
+            Vector2 knockback = direction * knockbackForce;
+
+            damageable.OnHit(damage, knockback);
+
+            return;
+        }
+
         if (trashCollected < trashMaxCapacity)
         {
             trashCollected++;
             Destroy(collision.gameObject);
             CreateTrashBag();
         }
+
+
     }   
     
     private void CreateTrashBag()

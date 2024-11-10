@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fd94cc00da8176944be75451ee5bf5dc
+guid: dc5de0c40bb7fc148bcf44c105065c41
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,64 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ratoGolpeado_0
+      name: pomboGolpeado_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
+        width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.22}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 986beba0053b8994aa5a5f31315f9a66
-      internalID: 1355928796
+      spriteID: c48185a38e27b0d409bfa43b5761ff97
+      internalID: 161898193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ratoGolpeado_1
+      name: pomboGolpeado_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 0
-        width: 48
+        width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.22}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34dfbf9de76ccce429887b15d09a6fd6
-      internalID: -1743106714
+      spriteID: acdbf5273e89ebc40a0ab3750f3b994b
+      internalID: -1365262119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ratoGolpeado_2
+      name: pomboGolpeado_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 64
         y: 0
-        width: 48
+        width: 32
         height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.22}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba19ff6ca120dae4e9505d1325ad6aa6
-      internalID: -356594639
+      spriteID: 2d2c5da96769e4640bb92a9c9ef459bb
+      internalID: 1404813573
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ratoGolpeado_0: 1355928796
-      ratoGolpeado_1: -1743106714
-      ratoGolpeado_2: -356594639
+      pomboGolpeado_0: 161898193
+      pomboGolpeado_1: -1365262119
+      pomboGolpeado_2: 1404813573
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
