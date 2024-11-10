@@ -62,12 +62,14 @@ public class PlayerController : MonoBehaviour
             IsMoving = true;
 
             animator.SetFloat(moveX, movementInput.x);
-            animator.SetFloat(moveY, movementInput.y);            
+            animator.SetFloat(moveY, movementInput.y);
 
+            if (!AudioManager.Instance.PassosSource.isPlaying) AudioManager.Instance.PassosSource.Play();
         }             
         else
         {            
             IsMoving = false;
+            if (AudioManager.Instance.PassosSource.isPlaying) AudioManager.Instance.PassosSource.Stop();
         }
         
     }    

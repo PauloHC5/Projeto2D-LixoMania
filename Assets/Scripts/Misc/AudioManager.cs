@@ -7,12 +7,16 @@ public class AudioManager : MonoBehaviour
     [Header("---------Audio Source---------")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] private AudioSource SFXSource;
+    [SerializeField] private AudioSource SFXPassosSource;
+
+    public AudioSource PassosSource { get { return SFXPassosSource; } }
 
     [Header("---------Audio Clip---------")]
     public AudioClip background;
     public AudioClip attack;
     public AudioClip spawnTrashBag;
     public AudioClip takeDamage;
+    public AudioClip playerSteps;
 
     public static AudioManager Instance;
 
@@ -24,12 +28,12 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         musicSource.clip = background;
-        musicSource.Play();
+        musicSource.Play();        
     }
 
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);        
-    }
+    }    
 
 }
