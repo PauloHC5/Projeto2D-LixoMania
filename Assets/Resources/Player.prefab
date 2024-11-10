@@ -233,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   invencibilityTime: 0.25
-  deathVFX: {fileID: 0}
+  deathVFX: {fileID: 6583981792309957, guid: ba2c0a09d70b092429d802fc8ce1aef6, type: 3}
 --- !u!1 &4867715292800905653
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 6600729620998300963}
   - component: {fileID: 5207343562579573820}
   - component: {fileID: 1182815243220315801}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: AttackHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ MonoBehaviour:
   trashMaxCapacity: 30
   trashCollected: 10
   damage: 1
-  knockbackForce: 50
+  knockbackForce: 10
 --- !u!1 &7738232911504975744
 GameObject:
   m_ObjectHideFlags: 0
