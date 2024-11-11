@@ -639,8 +639,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashBagsAmount: 0
-  timeToAddTragBag: 10
-  trashSpawnTimer: 3
+  timeToAddTragBag: 20
+  trashSpawnTimer: 10
   trasgBagsSprites:
   - {fileID: 0}
   - {fileID: 3851396724141123130, guid: 102859b381bcf654ab463b71f06c252e, type: 3}
