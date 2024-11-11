@@ -22,11 +22,16 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     public bool IsAccumulated {  get { return isAccumulated; } }
 
-    private Bounds zoneBounds; 
+    private Bounds zoneBounds;
+
+    private CapsuleCollider2D capsuleCollider;
+
+    private IEnumerator restartInvokeChangeSpriteRoutine;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();        
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     void Start()
@@ -48,6 +53,9 @@ public class TrashDump : MonoBehaviour, IInteractable
             spriteRenderer.sprite = trasgBagsSprites[trashBagsAmount];            
         }
 
+        if(trashBagsAmount <= 0) capsuleCollider.enabled = false;
+        else capsuleCollider.enabled = true;
+
         AlternateTrashBagsShadowsWithTheAmount();
 
         if (trasgBagsSprites.Count != 0 && trashBagsAmount >= trasgBagsSprites.Count) isAccumulated = true;
@@ -62,8 +70,12 @@ public class TrashDump : MonoBehaviour, IInteractable
     public GameObject Interact()
     {
         if (trashBagsAmount > 0)
-        {
-            StartCoroutine(RestartInvokeChangeSprite());
+        {          
+            if(restartInvokeChangeSpriteRoutine == null)
+            {
+                restartInvokeChangeSpriteRoutine = RestartInvokeChangeSpriteRoutine();
+                StartCoroutine(restartInvokeChangeSpriteRoutine);                
+            }            
 
             trashBagsAmount--;
 
@@ -78,11 +90,12 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     }
 
-    private IEnumerator RestartInvokeChangeSprite()
+    private IEnumerator RestartInvokeChangeSpriteRoutine()
     {
         CancelInvoke(nameof(ChangeSprite));
         yield return new WaitForSeconds(60);
-        InvokeRepeating(nameof(ChangeSprite), timeToAddTragBag, timeToAddTragBag);
+        InvokeRepeating(nameof(ChangeSprite), 0, timeToAddTragBag);        
+        restartInvokeChangeSpriteRoutine = null;
 
     }
 
@@ -101,8 +114,7 @@ public class TrashDump : MonoBehaviour, IInteractable
         if (trashSpawned != null)
         {
             Vector2 trashPos = RandomPointInBounds();
-            trashSpawned.transform.position = trashPos;
-            Debug.Log("Spawnei");
+            trashSpawned.transform.position = trashPos;            
 
             yield return new WaitForSeconds(trashSpawnTimer);
             yield return SpawnTrashInTheZoneRoutine();            
