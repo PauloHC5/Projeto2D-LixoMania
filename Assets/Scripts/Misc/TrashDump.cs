@@ -54,6 +54,9 @@ public class TrashDump : MonoBehaviour, IInteractable
         else isAccumulated = false;
 
         if (isAccumulated && !isCoroutineReady) StartCoroutine(SpawnTrashInTheZoneRoutine());
+
+        if (!isAccumulated) StopCoroutine(SpawnTrashInTheZoneRoutine());
+        
     }
 
     public GameObject Interact()
@@ -85,7 +88,13 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     private IEnumerator SpawnTrashInTheZoneRoutine()
     {
-        isCoroutineReady = true;        
+        if(!isAccumulated)
+        {
+            isAccumulated = false;
+            yield break;
+        }
+
+        isCoroutineReady = true;
 
         GameObject trashSpawned = TrashSpawnManager.Instance.TrashToSpawn();
 
@@ -93,9 +102,10 @@ public class TrashDump : MonoBehaviour, IInteractable
         {
             Vector2 trashPos = RandomPointInBounds();
             trashSpawned.transform.position = trashPos;
+            Debug.Log("Spawnei");
 
             yield return new WaitForSeconds(trashSpawnTimer);
-            yield return SpawnTrashInTheZoneRoutine();        
+            yield return SpawnTrashInTheZoneRoutine();            
         }        
 
         isCoroutineReady = false;
