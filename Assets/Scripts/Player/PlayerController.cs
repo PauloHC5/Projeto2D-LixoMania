@@ -43,12 +43,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();        
         playerInteract = GetComponent<PlayerInteract>();
         trashCollection = GetComponentInChildren<PlayerTrashCollection>();
-    }
-
-    private void Start()
-    {
-        Time.timeScale = 1.0f;
-    }
+    }    
 
     private void Update()
     {
@@ -114,21 +109,7 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement()
     {
         canMove = true;
-    }
-
-    private void PauseGame()
-    {
-        if (PauseMenu.Instance.gameObject.activeSelf)
-        {
-            PauseMenu.Instance.gameObject.SetActive(false);
-            Time.timeScale = 1f;
-        }
-        else
-        {
-            PauseMenu.Instance.gameObject.SetActive(true);
-            Time.timeScale = 0f;
-        }            
-    }
+    }    
 
     void CheckPlayerOneInputs()
     {
@@ -155,8 +136,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("BRANCO0"))
         {
             SceneManager.LoadScene("Praca");
-        }
-
-        if (Input.GetButtonDown("MENU")) PauseGame();
+        }        
     }
 }
