@@ -12,9 +12,13 @@ public class HotDogStore : MonoBehaviour, IInteractable
 
     public GameObject Interact()
     {
-        textoPedido.SetActive(false);
-        textoObrigado.SetActive(true);
-        playerHealth.Health += 5;
+        if(playerHealth.Health < 10)
+        {
+            textoPedido.SetActive(false);
+            textoObrigado.SetActive(true);
+            playerHealth.Health += 5;
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.heal);
+        }        
 
         return null;
     }

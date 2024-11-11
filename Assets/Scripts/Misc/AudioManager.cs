@@ -15,8 +15,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip background;
     public AudioClip attack;
     public AudioClip spawnTrashBag;
-    public AudioClip takeDamage;
-    public AudioClip playerSteps;
+    public AudioClip takeDamage;    
+    public AudioClip heal;
 
     public static AudioManager Instance;
 
