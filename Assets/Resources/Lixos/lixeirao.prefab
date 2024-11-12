@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 93378791774314180}
   - component: {fileID: 3789045937210659329}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: trashCollider
   m_TagString: TrashCan
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13591222, y: 0.17592359}
+  m_Offset: {x: 0.33953565, y: 0.21159482}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -239,7 +239,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.89244974, y: 0.39691162}
+  m_Size: {x: 0.7765182, y: 0.4682541}
   m_EdgeRadius: 0
 --- !u!1 &4940274911521344999
 GameObject:
