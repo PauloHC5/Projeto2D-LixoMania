@@ -232,8 +232,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  invencibilityTime: 0.25
+  invencibilityTime: 1.5
   deathVFX: {fileID: 6583981792309957, guid: ba2c0a09d70b092429d802fc8ce1aef6, type: 3}
+  layerToIgnoreWhenInvencible:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &4867715292800905653
 GameObject:
   m_ObjectHideFlags: 0

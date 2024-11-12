@@ -7,11 +7,15 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     [SerializeField] private float health = 5;
     [SerializeField] private float invencibilityTime = 0.25f;
     [SerializeField] private GameObject deathVFX;
+    [SerializeField] private LayerMask layerToIgnoreWhenInvencible;
 
     private int takeDamage = Animator.StringToHash("takeDamage");
 
     private Animator animator;
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
+    private Collider2D col;
+
+    private IEnumerator invencibleRoutine;
 
     public float Health
     {
@@ -24,9 +28,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         get { return health; }
     }    
 
-    private bool invencible = false;
-
-    private float invencibleTimeElapsed = 0f;
+    private bool invencible = false;    
 
     public bool Invencible
     {
@@ -34,12 +36,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
         set
         {
-            invencible = value;
-
-            if(invencible)
-            {
-                invencibleTimeElapsed = 0f;
-            }
+            invencible = value;            
         }
     }
 
@@ -51,6 +48,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         if(animator == null) animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         npc = GetComponent<NPC>();
+        col = GetComponent<Collider2D>();
     }    
 
     public void Defeated()
@@ -59,13 +57,13 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         if(deathVFX)
         {
             Instantiate(deathVFX, transform.position, Quaternion.identity);
-            RemoveEnemy();
+            RemoveCharacter();
         }        
-        else RemoveEnemy();
+        else RemoveCharacter();
         
     }
 
-    private void RemoveEnemy()
+    private void RemoveCharacter()
     {
         Destroy(gameObject);
     }
@@ -79,7 +77,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             //Apply the force to the slime
             rb.AddForce(knockback, ForceMode2D.Impulse);
 
-            invencible = true;
+            Invencible = true;
+            if(invencibleRoutine == null) invencibleRoutine = InvencibleRoutine();
+            StartCoroutine(invencibleRoutine);            
 
             if (animator) animator.SetTrigger(takeDamage);
             if (npc != null) npc.StunNPC();
@@ -93,20 +93,15 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         if (!invencible)
         {
             Health -= damage;
-            invencible = true;
+            Invencible = true;
         }
     }
 
-    private void FixedUpdate()
-    {
-        if (invencible)
-        {
-            invencibleTimeElapsed += Time.deltaTime;
-
-            if( invencibleTimeElapsed > invencibilityTime)
-            {
-                invencible = false;
-            }
-        }
-    }
+    private IEnumerator InvencibleRoutine()
+    {        
+        col.excludeLayers |= (1 << LayerMask.NameToLayer("Enemies"));
+        yield return new WaitForSeconds(invencibilityTime);
+        col.excludeLayers &= ~(1 << LayerMask.NameToLayer("Enemies"));
+        invencible = false;
+    }    
 }

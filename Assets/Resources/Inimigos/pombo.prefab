@@ -230,8 +230,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  invencibilityTime: 0.25
+  invencibilityTime: 0
   deathVFX: {fileID: 6583981792309957, guid: ba2c0a09d70b092429d802fc8ce1aef6, type: 3}
+  col: {fileID: 0}
 --- !u!1 &3614998356927054766
 GameObject:
   m_ObjectHideFlags: 0

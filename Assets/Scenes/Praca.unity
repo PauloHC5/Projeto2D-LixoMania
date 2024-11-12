@@ -3166,7 +3166,7 @@ MonoBehaviour:
   caixaDeDialogo: {fileID: 477501079}
   textoPedido: {fileID: 1684036188}
   textoObrigado: {fileID: 275761307}
-  playerHealth: {fileID: 1365482694}
+  playerHealth: {fileID: 0}
 --- !u!1 &189841477
 GameObject:
   m_ObjectHideFlags: 0
@@ -8021,7 +8021,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 2.6666667
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8673,6 +8673,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1839946159071265665, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+      propertyPath: deathVFX
+      value: 
+      objectReference: {fileID: 6583981792309957, guid: ba2c0a09d70b092429d802fc8ce1aef6, type: 3}
+    - target: {fileID: 1839946159071265665, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+      propertyPath: invencibilityTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839946159071265665, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+      propertyPath: layerToIgnoreWhenInvencible.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 3462032240714236608, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.32
@@ -8717,7 +8729,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4755280269545564352, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+      propertyPath: layerToIgnoreWhenInvencible.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4755280269545564352, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -20862,17 +20879,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3462032240714236608, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
   m_PrefabInstance: {fileID: 587133354}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1365482694 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4755280269545564352, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
-  m_PrefabInstance: {fileID: 587133354}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6918ba0216ca74649b5d8d5ddf85e890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1386638015
 GameObject:
   m_ObjectHideFlags: 0
@@ -33850,6 +33856,10 @@ PrefabInstance:
     - target: {fileID: 4341095294668013065, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_Name
       value: sacosDeLixo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5331021929073706572, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
+      propertyPath: trashBagsAmount
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5495185031939348143, guid: fe0b5e1a7a2fa0340b757ba55a63f1e4, type: 3}
       propertyPath: m_LocalPosition.x
