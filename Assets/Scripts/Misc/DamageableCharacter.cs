@@ -3,32 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageableCharacter : MonoBehaviour, IDamageable
-{    
-    [SerializeField] private float health = 5;
-    [SerializeField] private float invencibilityTime = 0.25f;
-    [SerializeField] private GameObject deathVFX;
-    [SerializeField] private LayerMask layerToIgnoreWhenInvencible;
+{
+    [SerializeField] protected float invencibilityTime = 0.25f;
+    [SerializeField] protected bool invencible = false;
 
-    private int takeDamage = Animator.StringToHash("takeDamage");
+    protected int takeDamage = Animator.StringToHash("takeDamage");
 
-    private Animator animator;
+    protected Animator animator;
     protected Rigidbody2D rb;
-    private Collider2D col;
+    protected Collider2D col;
 
-    private IEnumerator invencibleRoutine;
-
-    public float Health
-    {
-        set
-        {
-            health = value;
-            if(health > 10) health = 10;
-            if (health <= 0) Defeated();                        
-        }
-        get { return health; }
-    }    
-
-    private bool invencible = false;    
+    protected IEnumerator invencibleRoutine;
 
     public bool Invencible
     {
@@ -36,9 +21,10 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
 
         set
         {
-            invencible = value;            
+            invencible = value;
         }
     }
+
 
     private NPC npc;
 
@@ -49,37 +35,17 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         npc = GetComponent<NPC>();
         col = GetComponent<Collider2D>();
-    }    
+    }           
 
-    public void Defeated()
-    {
-        rb.simulated = false;       
-        if(deathVFX)
-        {
-            Instantiate(deathVFX, transform.position, Quaternion.identity);
-            RemoveCharacter();
-        }        
-        else RemoveCharacter();
-        
-    }
-
-    private void RemoveCharacter()
-    {
-        Destroy(gameObject);
-    }
-
-    public void OnHit(float damage, Vector2 knockback)
+    public virtual void OnHit(float damage, Vector2 knockback)
     {
         if (!invencible)
-        {
-            Health -= damage;
-
+        {            
             //Apply the force to the slime
             rb.AddForce(knockback, ForceMode2D.Impulse);
 
-            Invencible = true;
-            if(invencibleRoutine == null) invencibleRoutine = InvencibleRoutine();
-            StartCoroutine(invencibleRoutine);            
+            Invencible = true;            
+            StartCoroutine(InvencibleRoutine());            
 
             if (animator) animator.SetTrigger(takeDamage);
             if (npc != null) npc.StunNPC();
@@ -88,13 +54,9 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         }
     }
 
-    public void OnHit(float damage)
+    public virtual void OnHit(float damage)
     {
-        if (!invencible)
-        {
-            Health -= damage;
-            Invencible = true;
-        }
+        
     }
 
     private IEnumerator InvencibleRoutine()

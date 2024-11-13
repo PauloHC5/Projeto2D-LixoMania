@@ -16,13 +16,13 @@ public class HUD : MonoBehaviour
     private GameObject player;
 
     private PlayerTrashCollection trashCollection;
-    private DamageableCharacter playerHealth;    
+    private PlayerHealth playerHealth;    
 
     void Awake()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         trashCollection = player.GetComponentInChildren<PlayerTrashCollection>();
-        playerHealth = player.GetComponent<DamageableCharacter>();
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     // Start is called before the first frame update

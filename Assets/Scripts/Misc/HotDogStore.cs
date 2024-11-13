@@ -8,7 +8,7 @@ public class HotDogStore : MonoBehaviour, IInteractable
 
     public GameObject textoPedido;
     public GameObject textoObrigado;
-    public DamageableCharacter playerHealth;
+    public PlayerHealth playerHealth;
 
     public GameObject Interact()
     {
