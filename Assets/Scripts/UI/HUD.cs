@@ -18,6 +18,8 @@ public class HUD : MonoBehaviour
     private PlayerTrashCollection trashCollection;
     private PlayerHealth playerHealth;    
 
+    private TrashSpawnManager trashManager;
+
     void Awake()
     {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
@@ -29,6 +31,7 @@ public class HUD : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
+        trashManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().trashManager;
     }
 
     // Update is called once per frame
@@ -37,47 +40,29 @@ public class HUD : MonoBehaviour
         trashHUDMask.padding = new Vector4(0, trashCollection.TrashCollected * 5, 0, 0);
         healthSlider.value = playerHealth.Health;
 
-        if(TrashSpawnManager.TrashsInTheZone >= 15 && TrashSpawnManager.TrashsInTheZone  < 50)
+        if(trashManager.TrashsInTheZone >= 15 && trashManager.TrashsInTheZone  < 50)
         {
             polutionSlider.value = 15;
         }
-        else if(TrashSpawnManager.TrashsInTheZone >= 50 && TrashSpawnManager.TrashsInTheZone < 100)
+        else if(trashManager.TrashsInTheZone >= 50 && trashManager.TrashsInTheZone < 100)
         {
             polutionSlider.value = 50;
         }
-        else if(TrashSpawnManager.TrashsInTheZone >= 100 && TrashSpawnManager.TrashsInTheZone < 150)
+        else if(trashManager.TrashsInTheZone >= 100 && trashManager.TrashsInTheZone < 150)
         {
             polutionSlider.value = 100;
         } 
-        else if (TrashSpawnManager.TrashsInTheZone >= 150 && TrashSpawnManager.TrashsInTheZone < 200)
+        else if (trashManager.TrashsInTheZone >= 150 && trashManager.TrashsInTheZone < 200)
         {
             polutionSlider.value = 150;
         }
-        else if(TrashSpawnManager.TrashsInTheZone >= 200)
+        else if(trashManager.TrashsInTheZone >= 200)
         {
             polutionSlider.value = 200;
         }
         else
         {
             polutionSlider.value = 0;
-        }
-
-        //polutionSlider.value = TrashSpawnManager.TrashsInTheZone / 2;
-
-        if (Input.GetButtonDown("MENU")) PauseGame();
-    }
-
-    private void PauseGame()
-    {
-        if (PauseMenu.Instance.gameObject.activeSelf)
-        {
-            PauseMenu.Instance.gameObject.SetActive(false);
-            Time.timeScale = 1f;
-        }
-        else
-        {
-            PauseMenu.Instance.gameObject.SetActive(true);
-            Time.timeScale = 0f;
-        }
-    }
+        }            
+    }    
 }

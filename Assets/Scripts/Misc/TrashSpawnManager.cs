@@ -8,11 +8,14 @@ public class TrashSpawnManager : MonoBehaviour
 
     public static TrashSpawnManager Instance { get { return instance; } }
 
-    [SerializeField] private static int zoneMaxTrash = 200;
+    [SerializeField] private int zoneMaxTrash = 200;
 
-    [SerializeField] protected static int trashsInTheZoneCount = 0;    
+    [SerializeField] protected int trashsInTheZoneCount = 0;    
 
-    public static int TrashsInTheZone { get { return trashsInTheZoneCount; } }
+    public int TrashsInTheZone 
+    {
+        get { return trashsInTheZoneCount; }        
+    }
 
     private void Awake()
     {
@@ -52,6 +55,16 @@ public class TrashSpawnManager : MonoBehaviour
         }
 
         return "";
+    }
+
+    public void IncrementTrashSpawned()
+    {
+        trashsInTheZoneCount++;
+    }
+
+    public void DecrementTrashSpawned()
+    {
+        trashsInTheZoneCount--;
     }    
     
 }

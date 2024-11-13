@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3923,6 +3922,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &251727669
 GameObject:
   m_ObjectHideFlags: 0
@@ -4740,6 +4745,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &287882815
 GameObject:
   m_ObjectHideFlags: 0
@@ -6170,6 +6181,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &355065177
 GameObject:
   m_ObjectHideFlags: 0
@@ -7900,12 +7917,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12626,6 +12643,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &837249198
 GameObject:
   m_ObjectHideFlags: 0
@@ -13243,6 +13266,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &867620434
 GameObject:
   m_ObjectHideFlags: 0
@@ -17170,6 +17199,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1152269632
 GameObject:
   m_ObjectHideFlags: 0
@@ -17915,6 +17950,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1181200206
 GameObject:
   m_ObjectHideFlags: 0
@@ -18205,6 +18246,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1214061792
 GameObject:
   m_ObjectHideFlags: 0
@@ -22717,9 +22764,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1514859482}
+  - component: {fileID: 1514859483}
+  - component: {fileID: 1514859484}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22739,6 +22788,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1514859483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514859481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c684be39ce475134b945aa2b716d5805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  trashManager: {fileID: 1514859484}
+--- !u!114 &1514859484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514859481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d82d3a0bed9a24989f4e0173770b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trashsInTheZoneCount: 0
 --- !u!1 &1515365234
 GameObject:
   m_ObjectHideFlags: 0
@@ -24926,6 +25002,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1627116350
 GameObject:
   m_ObjectHideFlags: 0
@@ -27206,6 +27288,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IncrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
+  DecrementTrash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1759952804
 GameObject:
   m_ObjectHideFlags: 0
