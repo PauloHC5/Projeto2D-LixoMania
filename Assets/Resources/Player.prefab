@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5020004619764123534}
   - component: {fileID: 1839946159071265665}
   - component: {fileID: 6332522382990970018}
-  - component: {fileID: 4755280269545564352}
+  - component: {fileID: 6983202241558092858}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -219,7 +219,7 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &4755280269545564352
+--- !u!114 &6983202241558092858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,11 +228,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4071116275319601372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6918ba0216ca74649b5d8d5ddf85e890, type: 3}
+  m_Script: {fileID: 11500000, guid: 69a96b637f7f5f44fac9fc9c4f5e34d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
   invencibilityTime: 1.5
+  invencible: 0
+  health: 10
   deathVFX: {fileID: 6583981792309957, guid: ba2c0a09d70b092429d802fc8ce1aef6, type: 3}
   layerToIgnoreWhenInvencible:
     serializedVersion: 2

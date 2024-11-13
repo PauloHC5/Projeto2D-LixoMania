@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerHealth : DamageableCharacter
 {
-    [SerializeField] private float health = 5;    
+    [SerializeField] protected float invencibilityTime = 0.25f;    
     [SerializeField] private GameObject deathVFX;
     [SerializeField] private LayerMask layerToIgnoreWhenInvencible;
 
-    private SpriteRenderer spriteRenderer;
-    
+    protected bool invencible = false;
+
+    private SpriteRenderer spriteRenderer;    
 
     public float Health
     {
@@ -20,6 +21,13 @@ public class PlayerHealth : DamageableCharacter
             if (health <= 0) Defeated();
         }
         get { return health; }
+    }
+
+    public bool Invencible
+    {
+        get => invencible;
+
+        set => invencible = value;       
     }
 
     private void Start()
@@ -45,32 +53,38 @@ public class PlayerHealth : DamageableCharacter
 
     public override void OnHit(float damage, Vector2 knockback)
     {
-        if (!invencible) Health -= damage;
-
         base.OnHit(damage, knockback);
 
-        StartCoroutine(BlinkPlayer());
-    }
-
-    public override void OnHit(float damage)
-    {
         if (!invencible)
         {
             Health -= damage;
-            Invencible = true;            
-        }
-    }
+            Invencible = true;
+            StartCoroutine(InvencibleRoutine());                        
+        }        
+
+        StartCoroutine(BlinkPlayer());
+    }    
 
     private IEnumerator BlinkPlayer()
     {
         while (invencible)
         {
-            Debug.Log("To aqui");
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 70f);
-            yield return new WaitForSeconds(1.0f);
-            //spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 255f);
-        }
+            //spriteRenderer.enabled = false;
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.25f);
+            yield return new WaitForSeconds(invencibilityTime / 8);
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
+            yield return new WaitForSeconds(invencibilityTime / 8);
+        }        
 
-        yield break;
+        yield break;        
+    }
+
+    private IEnumerator InvencibleRoutine()
+    {
+        LayerMask defaultLayer = col.excludeLayers;
+        col.excludeLayers = layerToIgnoreWhenInvencible;
+        yield return new WaitForSeconds(invencibilityTime);
+        col.excludeLayers = defaultLayer;
+        invencible = false;
     }
 }
