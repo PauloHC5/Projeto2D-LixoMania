@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 131487199058803565}
   - component: {fileID: 1293541066641854212}
   - component: {fileID: 4803498814287996606}
-  - component: {fileID: 5718781121347301025}
+  - component: {fileID: 4920712728993231899}
   m_Layer: 11
   m_Name: pombo
   m_TagString: npc
@@ -217,7 +217,7 @@ MonoBehaviour:
   shadowChild: {fileID: 8056059944844458056}
   damage: 1
   knockbackForce: 20
---- !u!114 &5718781121347301025
+--- !u!114 &4920712728993231899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,13 +226,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3012814266586296876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6918ba0216ca74649b5d8d5ddf85e890, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f771f891b7aa3746a46129d6df95f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  invencibilityTime: 0
   deathVFX: {fileID: 6583981792309957, guid: ba2c0a09d70b092429d802fc8ce1aef6, type: 3}
-  col: {fileID: 0}
 --- !u!1 &3614998356927054766
 GameObject:
   m_ObjectHideFlags: 0

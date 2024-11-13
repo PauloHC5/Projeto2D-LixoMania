@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 156262856566983768}
   - component: {fileID: 8534362164546746817}
   - component: {fileID: 4501163826303130081}
-  - component: {fileID: 4398478193751537485}
+  - component: {fileID: 2788518284724339793}
   m_Layer: 11
   m_Name: rato
   m_TagString: npc
@@ -239,7 +239,7 @@ MonoBehaviour:
   shadowChild: {fileID: 0}
   damage: 1
   knockbackForce: 20
---- !u!114 &4398478193751537485
+--- !u!114 &2788518284724339793
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,13 +248,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3088933425158938567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6918ba0216ca74649b5d8d5ddf85e890, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f771f891b7aa3746a46129d6df95f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  invencibilityTime: 0
   deathVFX: {fileID: 6583981792309957, guid: ba2c0a09d70b092429d802fc8ce1aef6, type: 3}
-  col: {fileID: 0}
 --- !u!1 &7321180377505665510
 GameObject:
   m_ObjectHideFlags: 0
