@@ -38,31 +38,33 @@ public class HUD : MonoBehaviour
     void Update()
     {        
         trashHUDMask.padding = new Vector4(0, trashCollection.TrashCollected * 5, 0, 0);
-        healthSlider.value = playerHealth.Health;
+        healthSlider.value = playerHealth.Health;        
 
-        if(trashManager.TrashsInTheZone >= 15 && trashManager.TrashsInTheZone  < 50)
+        polutionSlider.maxValue = trashManager.SceneMaxTrash;
+
+        float onequarter = trashManager.SceneMaxTrash / 4f;
+        float half = trashManager.SceneMaxTrash / 2f;
+        float threeQuarter = trashManager.SceneMaxTrash / 1.5f;
+
+        if (trashManager.TrashsInTheZone >= onequarter && trashManager.TrashsInTheZone < half)
         {
-            polutionSlider.value = 15;
+            polutionSlider.value = onequarter;
         }
-        else if(trashManager.TrashsInTheZone >= 50 && trashManager.TrashsInTheZone < 100)
+        else if (trashManager.TrashsInTheZone >= half && trashManager.TrashsInTheZone < threeQuarter)
         {
-            polutionSlider.value = 50;
+            polutionSlider.value = half;
         }
-        else if(trashManager.TrashsInTheZone >= 100 && trashManager.TrashsInTheZone < 150)
+        else if (trashManager.TrashsInTheZone >= threeQuarter && trashManager.TrashsInTheZone < trashManager.SceneMaxTrash)
         {
-            polutionSlider.value = 100;
-        } 
-        else if (trashManager.TrashsInTheZone >= 150 && trashManager.TrashsInTheZone < 200)
-        {
-            polutionSlider.value = 150;
+            polutionSlider.value = threeQuarter;
         }
-        else if(trashManager.TrashsInTheZone >= 200)
+        else if(trashManager.TrashsInTheZone >= trashManager.SceneMaxTrash)
         {
-            polutionSlider.value = 200;
+            polutionSlider.value = trashManager.SceneMaxTrash;
         }
         else
         {
             polutionSlider.value = 0;
-        }            
+        }
     }    
 }

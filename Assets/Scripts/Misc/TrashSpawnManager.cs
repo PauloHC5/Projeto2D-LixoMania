@@ -8,14 +8,13 @@ public class TrashSpawnManager : MonoBehaviour
 
     public static TrashSpawnManager Instance { get { return instance; } }
 
-    [SerializeField] private int zoneMaxTrash = 200;
+    [SerializeField] private int sceneMaxTrash = 200;
 
-    [SerializeField] protected int trashsInTheZoneCount = 0;    
+    [SerializeField] protected int trashsInTheSceneCount = 0;    
 
-    public int TrashsInTheZone 
-    {
-        get { return trashsInTheZoneCount; }        
-    }
+    public int TrashsInTheZone { get { return trashsInTheSceneCount; } }
+
+    public int SceneMaxTrash { get { return sceneMaxTrash; } }
 
     private void Awake()
     {
@@ -25,7 +24,7 @@ public class TrashSpawnManager : MonoBehaviour
     public GameObject TrashToSpawn()
     {        
 
-        if (trashsInTheZoneCount < zoneMaxTrash)
+        if (trashsInTheSceneCount < sceneMaxTrash)
         {
             string trashToSpawnName = "Lixos/" + ChooseRandomTrash();
 
@@ -59,12 +58,12 @@ public class TrashSpawnManager : MonoBehaviour
 
     public void IncrementTrashSpawned()
     {
-        trashsInTheZoneCount++;
+        trashsInTheSceneCount++;
     }
 
     public void DecrementTrashSpawned()
     {
-        trashsInTheZoneCount--;
+        trashsInTheSceneCount--;
     }    
     
 }

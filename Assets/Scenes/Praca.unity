@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3168,8 +3169,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192428200}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.998638, y: 11.405372, z: 3.202296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3183,7 +3184,7 @@ Transform:
   - {fileID: 865303438}
   - {fileID: 836907178}
   - {fileID: 1173267187}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1514859482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &196203713
 GameObject:
@@ -4651,7 +4652,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 200
   m_WholeNumbers: 0
-  m_Value: 200
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7848,7 +7849,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 2.6666667
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7917,12 +7918,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22785,7 +22786,8 @@ Transform:
   m_LocalPosition: {x: -8.998638, y: -11.405372, z: -3.202296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 192428202}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1514859483
@@ -22814,7 +22816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d82d3a0bed9a24989f4e0173770b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashsInTheZoneCount: 0
+  sceneMaxTrash: 8
+  trashsInTheSceneCount: 0
 --- !u!1 &1515365234
 GameObject:
   m_ObjectHideFlags: 0
@@ -33963,7 +33966,6 @@ SceneRoots:
   - {fileID: 1728799203}
   - {fileID: 1871007266}
   - {fileID: 1254976522}
-  - {fileID: 192428202}
   - {fileID: 1996513105}
   - {fileID: 746996727}
   - {fileID: 33386258}
