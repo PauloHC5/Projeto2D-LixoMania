@@ -70,7 +70,7 @@ public class TrashDump : MonoBehaviour, IInteractable
     public T Interact<T>() where T : class
     {
         if (trashBagsAmount > 0)
-        {
+        {            
             if (restartInvokeChangeSpriteRoutine == null)
             {
                 restartInvokeChangeSpriteRoutine = RestartInvokeChangeSpriteRoutine();

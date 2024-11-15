@@ -52,12 +52,10 @@ public class PlayerInteract : MonoBehaviour
 
         if(hitResult.collider && !isHolding)
         {
-            IInteractable interactable = hitResult.collider?.GetComponent<IInteractable>();
+            IInteractable interactable = hitResult.collider.GetComponent<IInteractable>();            
 
-            if (interactable.Interact<TrashBag>())
-            {
-                ObjectHold = interactable.Interact<TrashBag>();
-            }
+            ObjectHold = interactable.Interact<TrashBag>();
+            
         } else if(isHolding)
         {
             SendMessage("OnThrow", GetComponent<PlayerController>());
