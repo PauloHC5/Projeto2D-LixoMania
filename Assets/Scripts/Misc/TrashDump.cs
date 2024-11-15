@@ -65,29 +65,28 @@ public class TrashDump : MonoBehaviour, IInteractable
 
         if (!isAccumulated) StopCoroutine(SpawnTrashInTheZoneRoutine());
         
-    }
+    }    
 
-    public GameObject Interact()
+    public T Interact<T>() where T : class
     {
         if (trashBagsAmount > 0)
-        {          
-            if(restartInvokeChangeSpriteRoutine == null)
+        {
+            if (restartInvokeChangeSpriteRoutine == null)
             {
                 restartInvokeChangeSpriteRoutine = RestartInvokeChangeSpriteRoutine();
-                StartCoroutine(restartInvokeChangeSpriteRoutine);                
-            }            
+                StartCoroutine(restartInvokeChangeSpriteRoutine);
+            }
 
             trashBagsAmount--;
 
-            GameObject spawnedTrashBag = Instantiate(Resources.Load<GameObject>("Lixos/sacoDeLixo"));
+            TrashBag spawnedTrashBag = Instantiate(Resources.Load<TrashBag>("Lixos/sacoDeLixo"));
 
-            spawnedTrashBag.GetComponent<IInteractable>().Interact();            
+            spawnedTrashBag.Interact<TrashBag>();
 
-            return spawnedTrashBag;
+            return spawnedTrashBag as T;
         }
 
         return null;
-
     }
 
     private IEnumerator RestartInvokeChangeSpriteRoutine()
@@ -206,6 +205,5 @@ public class TrashDump : MonoBehaviour, IInteractable
         {
             zoneBounds = collision.GetComponent<Collider2D>().bounds;
         }
-    }
-
+    }    
 }

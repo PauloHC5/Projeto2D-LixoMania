@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class TrashBag : MonoBehaviour, IThrowingObject, IInteractable
 {
-    Rigidbody2D rb;   
-    Collider2D col;
-    SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;   
+    private Collider2D col;
+    private SpriteRenderer spriteRenderer;
 
     private bool canInteract = true;    
     
@@ -32,19 +32,19 @@ public class TrashBag : MonoBehaviour, IThrowingObject, IInteractable
         rb.velocity = Vector2.zero;
         spriteRenderer.sortingLayerName = "Default";
         canInteract = true;
-    }
+    }    
 
-    public GameObject Interact()
+    public T Interact<T>() where T : class
     {
-        if(canInteract)
+        if (canInteract)
         {
             col.isTrigger = true;
 
-            return gameObject;
+            return this as T;
         }
 
-        return null;        
-    }        
+        return null;
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -63,6 +63,5 @@ public class TrashBag : MonoBehaviour, IThrowingObject, IInteractable
             playerInteract.DisableHoldPos();
             col.isTrigger = false;            
         }
-    }
-
+    }   
 }

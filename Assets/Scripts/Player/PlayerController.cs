@@ -83,14 +83,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnThrow(GameObject objectHold)
+    void OnThrow()
     {
-        IThrowingObject throwingObject = objectHold.GetComponent<IThrowingObject>();
+        IThrowingObject throwingObject = playerInteract.ObjectHold.GetComponent<IThrowingObject>();
         if (throwingObject != null)
         {
             Vector2 playerDirection = new Vector2(animator.GetFloat(moveX), animator.GetFloat(moveY));
 
-            throwingObject.Throw(playerDirection, throwForce);
+            playerInteract.ObjectHold = null;
+            throwingObject.Throw(playerDirection, throwForce);            
 
             animator.SetTrigger(Throw);
 

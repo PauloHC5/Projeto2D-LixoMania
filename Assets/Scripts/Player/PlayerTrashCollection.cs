@@ -52,7 +52,7 @@ public class PlayerTrashCollection : MonoBehaviour
     {
         if (trashCollected >= trashMaxCapacity)
         {
-            GameObject trashBag = Instantiate(Resources.Load<GameObject>("Lixos/sacoDeLixo"));
+            TrashBag trashBag = Instantiate(Resources.Load<TrashBag>("Lixos/sacoDeLixo"));
             playerInteract.ObjectHold = trashBag;
             trashCollected = 0;
 

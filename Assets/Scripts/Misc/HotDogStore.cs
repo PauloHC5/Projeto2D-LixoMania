@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class HotDogStore : MonoBehaviour, IInteractable
 {
-    public GameObject caixaDeDialogo;
+    [SerializeField] int healAmount = 5;
 
-    public GameObject textoPedido;
-    public GameObject textoObrigado;
-    public PlayerHealth playerHealth;
+    [SerializeField] private GameObject caixaDeDialogo;
 
-    public GameObject Interact()
+    [SerializeField] private GameObject textoPedido;
+    [SerializeField] private GameObject textoObrigado;    
+
+    public T Interact<T>() where T : class
     {
-        if(playerHealth.Health < 10)
-        {
-            textoPedido.SetActive(false);
-            textoObrigado.SetActive(true);
-            playerHealth.Health += 5;
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.heal);
-        }        
+        textoPedido.SetActive(false);
+        textoObrigado.SetActive(true);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.heal);
 
-        return null;
+        return this as T;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

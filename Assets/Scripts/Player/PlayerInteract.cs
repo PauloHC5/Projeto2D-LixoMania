@@ -9,20 +9,14 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float raycastLength = 1f;        
     [SerializeField] private LayerMask raycastLayerMask;
 
-    private GameObject objectHold;
+    private TrashBag objectHold;    
 
-    public GameObject ObjectHold {
+    public TrashBag ObjectHold {
         get { return objectHold; }
 
         set 
-        {            
-            GameObject interactable = value.GetComponent<IInteractable>().Interact();                      
-
-            if (interactable != null)
-            {
-                holdPos.gameObject.SetActive(true);
-                objectHold = interactable;                                
-            }
+        {                                                    
+            objectHold = value;                                            
         }
     }
 
@@ -36,13 +30,14 @@ public class PlayerInteract : MonoBehaviour
     
     void Awake()
     {
-       animator = GetComponent<Animator>();        
+       animator = GetComponent<Animator>();              
     }    
 
     // Update is called once per frame
     void Update()
     {
         isHolding = objectHold != null ? true : false;
+        holdPos.gameObject.SetActive(objectHold ? true : false);
 
         if (objectHold != null) objectHold.transform.position = holdPos.position;                   
 
@@ -52,17 +47,23 @@ public class PlayerInteract : MonoBehaviour
 
     public void OnInteract()
     {
-        if (!isHolding)
+
+        RaycastHit2D hitResult = ProjectRaycast();        
+
+        if(hitResult.collider && !isHolding)
         {
-            RaycastHit2D hitResult = ProjectRaycast();            
-            
-            if (hitResult.collider != null) ObjectHold = hitResult.collider.gameObject;
+            IInteractable interactable = hitResult.collider?.GetComponent<IInteractable>();
+
+            if (interactable.Interact<TrashBag>())
+            {
+                ObjectHold = interactable.Interact<TrashBag>();
+            }
+        } else if(isHolding)
+        {
+            SendMessage("OnThrow", GetComponent<PlayerController>());
         }
-        else
-        {
-            SendMessage("OnThrow", objectHold);            
-            objectHold = null;
-        }          
+
+        
     }
     
     private RaycastHit2D ProjectRaycast()

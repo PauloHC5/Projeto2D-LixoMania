@@ -2,5 +2,5 @@
 
 public interface IInteractable
 {
-    GameObject Interact();    
+    public T Interact<T>() where T : class;
 }
