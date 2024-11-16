@@ -29,10 +29,14 @@ public class NPC : MonoBehaviour
     public GameObject shadowChild;
 
     // Variable to track the shadow rotation state
-    private bool isShadowRotated = false;
+    [SerializeField] private bool isNPCRotated = false;
     private bool canMove = true;    
 
     private Rigidbody2D rb;
+    private IEnumerator npcStunRoutine;
+
+    public float StunTime { get { return stunTime; } }
+    public bool IsNPCRotated {  get { return isNPCRotated; } }
 
     private void Awake()
     {
@@ -77,11 +81,10 @@ public class NPC : MonoBehaviour
 
     public void StunNPC()
     {
-        if (canMove)
-        {
-            canMove = false;
-            StartCoroutine(NPCStunRoutine());
-        }
+        canMove = false;
+        if(npcStunRoutine != null) StopCoroutine(npcStunRoutine);
+        npcStunRoutine = NPCStunRoutine();
+        StartCoroutine(npcStunRoutine);                                
     }
 
     private IEnumerator NPCStunRoutine()
@@ -139,11 +142,13 @@ public class NPC : MonoBehaviour
         if (direction.x > 0)
         {
             transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+            isNPCRotated = false;
             RotateShadowChild(false); // Rotate back if moving right
         }
         else if (direction.x < 0)
         {
             transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
+            isNPCRotated = true;
             RotateShadowChild(true); // Rotate by 90 degrees if moving left
         }
     }
@@ -152,15 +157,14 @@ public class NPC : MonoBehaviour
     {
         if (shadowChild != null)
         {
-            if (flip && !isShadowRotated)
+            if (flip && !isNPCRotated)
             {
-                shadowChild.transform.Rotate(0, 0, 90);  // Rotate by 90 degrees on the Z-axis
-                isShadowRotated = true;
+                shadowChild.transform.Rotate(0, 0, 90);  // Rotate by 90 degrees on the Z-axis                
             }
-            else if (!flip && isShadowRotated)
+            else if (!flip && isNPCRotated)
             {
                 shadowChild.transform.Rotate(0, 0, -90); // Rotate back by -90 degrees on the Z-axis
-                isShadowRotated = false;
+                
             }
         }
     }

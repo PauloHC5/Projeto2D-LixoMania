@@ -6,8 +6,7 @@ public class Enemy : NPC
 {
     public float damage = 1f;
     public float knockbackForce = 200f;    
-    
-
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D other = collision.collider;
