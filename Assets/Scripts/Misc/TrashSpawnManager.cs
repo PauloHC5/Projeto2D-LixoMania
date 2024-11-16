@@ -56,14 +56,21 @@ public class TrashSpawnManager : MonoBehaviour
         return "";
     }
 
-    public void IncrementTrashSpawned()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        trashsInTheSceneCount++;
+        if (collision.gameObject.tag == "trash")
+        {
+            trashsInTheSceneCount++;
+        }
+
     }
 
-    public void DecrementTrashSpawned()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        trashsInTheSceneCount--;
-    }    
-    
+        if (collision.gameObject.tag == "trash")
+        {
+            trashsInTheSceneCount--;
+        }
+    }
+
 }
