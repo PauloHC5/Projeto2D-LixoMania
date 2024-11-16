@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class HotDogStore : MonoBehaviour, IInteractable
 {
-    [SerializeField] int healAmount = 5;
+    [SerializeField] private int healAmount = 5;
 
     [SerializeField] private GameObject caixaDeDialogo;
 
     [SerializeField] private GameObject textoPedido;
-    [SerializeField] private GameObject textoObrigado;    
+    [SerializeField] private GameObject textoObrigado;
+
+    public int Heal { get { return healAmount; } }
 
     public T Interact<T>() where T : class
     {
