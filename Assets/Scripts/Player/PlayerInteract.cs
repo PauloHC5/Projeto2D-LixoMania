@@ -16,12 +16,13 @@ public class PlayerInteract : MonoBehaviour
 
         set 
         {                                                    
-            objectHold = value;                                            
+            objectHold = value;                                         
         }
     }
 
     private Animator animator;
     private bool isHolding;
+    private PlayerHealth playerHealth;
 
     public bool IsHolding {
         get { return isHolding; }        
@@ -30,19 +31,21 @@ public class PlayerInteract : MonoBehaviour
     
     void Awake()
     {
-       animator = GetComponent<Animator>();              
+       animator = GetComponent<Animator>();      
+       playerHealth = GetComponent<PlayerHealth>();
     }    
 
     // Update is called once per frame
     void Update()
     {
-        isHolding = objectHold != null ? true : false;
-        holdPos.gameObject.SetActive(objectHold ? true : false);
+        isHolding = objectHold != null ? true : false;        
 
-        if (objectHold != null) objectHold.transform.position = holdPos.position;                   
-
-        animator.SetBool("isCarrying", objectHold != null ? true : false);
-        
+        if (objectHold != null)
+        {
+            holdPos.gameObject.SetActive(true);
+            objectHold.transform.position = holdPos.position;
+        }
+        animator.SetBool("isCarrying", objectHold != null ? true : false);        
     }
 
     public void OnInteract()
@@ -52,10 +55,14 @@ public class PlayerInteract : MonoBehaviour
 
         if(hitResult.collider && !isHolding)
         {
-            IInteractable interactable = hitResult.collider.GetComponent<IInteractable>();            
-
+            IInteractable interactable = hitResult.collider.GetComponent<IInteractable>();                        
+              
             ObjectHold = interactable.Interact<TrashBag>();
-            
+            if (ObjectHold != null) return;
+
+            HotDogStore interactHotDogStore = interactable.Interact<HotDogStore>();
+            if (interactHotDogStore) playerHealth.Health += interactHotDogStore.Heal;
+
         } else if(isHolding)
         {
             SendMessage("OnThrow", GetComponent<PlayerController>());
