@@ -15,7 +15,7 @@ public class OpenCloseTrashCan : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {        
-        if (collision.GetComponent<PlayerInteract>()?.ObjectHold != null)
+        if (collision.GetComponent<PlayerInteract>().IsHolding)
         {
             animator.SetBool(isClosed, false);
         }

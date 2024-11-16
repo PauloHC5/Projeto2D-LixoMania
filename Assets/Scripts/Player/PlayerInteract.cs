@@ -43,7 +43,7 @@ public class PlayerInteract : MonoBehaviour
         if (objectHold != null)
         {
             holdPos.gameObject.SetActive(true);
-            objectHold.transform.position = holdPos.position;
+            objectHold.transform.position = holdPos.position;            
         }
         animator.SetBool("isCarrying", objectHold != null ? true : false);        
     }

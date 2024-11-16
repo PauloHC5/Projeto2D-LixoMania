@@ -3155,7 +3155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 192428202}
   - component: {fileID: 192428204}
-  - component: {fileID: 192428203}
+  - component: {fileID: 192428205}
   m_Layer: 10
   m_Name: SceneManager
   m_TagString: Zone
@@ -3178,24 +3178,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1514859482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &192428203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 192428200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15bee4e0e84973a4c9fbd7d581b0f6ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IncrementTrash:
-    m_PersistentCalls:
-      m_Calls: []
-  DecrementTrash:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &192428204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3241,6 +3223,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30.28, y: 51.4}
   m_EdgeRadius: 0
+--- !u!114 &192428205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192428200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d82d3a0bed9a24989f4e0173770b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneMaxTrash: 200
+  trashsInTheSceneCount: 0
 --- !u!1 &196203713
 GameObject:
   m_ObjectHideFlags: 0
@@ -8313,7 +8309,7 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4867715292800905653, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -22073,7 +22069,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1514859482}
   - component: {fileID: 1514859483}
-  - component: {fileID: 1514859484}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -22110,21 +22105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  trashManager: {fileID: 1514859484}
---- !u!114 &1514859484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514859481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d82d3a0bed9a24989f4e0173770b19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneMaxTrash: 200
-  trashsInTheSceneCount: 0
+  trashManager: {fileID: 192428205}
 --- !u!1 &1515365234
 GameObject:
   m_ObjectHideFlags: 0

@@ -231,9 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a96b637f7f5f44fac9fc9c4f5e34d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invencibilityTime: 1.5
-  invencible: 0
   health: 10
+  invencibilityTime: 1.5
   deathVFX: {fileID: 6583981792309957, guid: ba2c0a09d70b092429d802fc8ce1aef6, type: 3}
   layerToIgnoreWhenInvencible:
     serializedVersion: 2
@@ -248,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8071517349509143587}
   - component: {fileID: 4147209722852244606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hold Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}

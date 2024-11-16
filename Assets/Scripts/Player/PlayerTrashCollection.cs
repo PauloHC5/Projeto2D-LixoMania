@@ -52,8 +52,8 @@ public class PlayerTrashCollection : MonoBehaviour
     {
         if (trashCollected >= trashMaxCapacity)
         {
-            TrashBag trashBag = Instantiate(Resources.Load<TrashBag>("Lixos/sacoDeLixo"));
-            playerInteract.ObjectHold = trashBag;
+            TrashBag trashBag = Instantiate(Resources.Load<TrashBag>("Lixos/sacoDeLixo"));            
+            playerInteract.ObjectHold = trashBag.Interact<TrashBag>();
             trashCollected = 0;
 
             AudioManager.Instance.PlaySFX(AudioManager.Instance.spawnTrashBag);

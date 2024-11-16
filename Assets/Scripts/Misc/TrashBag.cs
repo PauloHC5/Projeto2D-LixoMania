@@ -20,6 +20,7 @@ public class TrashBag : MonoBehaviour, IThrowingObject, IInteractable
     public void Throw(Vector2 direction, float throwForce)
     {
         canInteract = false;
+        rb.simulated = true;
         rb.AddForce(direction * throwForce);
         rb.gravityScale = 2f;        
 
@@ -39,6 +40,7 @@ public class TrashBag : MonoBehaviour, IThrowingObject, IInteractable
         if (canInteract)
         {
             col.isTrigger = true;
+            rb.simulated = false;
             rb.velocity = Vector2.zero;
 
             return this as T;
