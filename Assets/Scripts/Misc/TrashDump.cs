@@ -9,8 +9,10 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     [SerializeField] private float timeToAddTragBag = 15;
 
-    [SerializeField] private float trashSpawnTimer = 1f;    
-    
+    [SerializeField] private float trashSpawnTimer = 1f;
+
+    [SerializeField] private GameObject trashAreaSpawn;
+
     private bool isCoroutineReady = false;
 
     public List<Sprite> trasgBagsSprites;
@@ -20,9 +22,7 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     private bool isAccumulated = false;
 
-    public bool IsAccumulated {  get { return isAccumulated; } }
-
-    private Bounds zoneBounds;
+    public bool IsAccumulated {  get { return isAccumulated; } }    
 
     private CapsuleCollider2D capsuleCollider;
 
@@ -126,8 +126,8 @@ public class TrashDump : MonoBehaviour, IInteractable
     private Vector2 RandomPointInBounds()
     {
         return new Vector2(
-            Random.Range(zoneBounds.min.x, zoneBounds.max.x),
-            Random.Range(zoneBounds.min.y, zoneBounds.max.y)
+            Random.Range(trashAreaSpawn.GetComponent<BoxCollider2D>().bounds.min.x, trashAreaSpawn.GetComponent<BoxCollider2D>().bounds.max.x),
+            Random.Range(trashAreaSpawn.GetComponent<BoxCollider2D>().bounds.min.y, trashAreaSpawn.GetComponent<BoxCollider2D>().bounds.max.y)
         );
     }  
     
@@ -196,14 +196,6 @@ public class TrashDump : MonoBehaviour, IInteractable
                 trashBagsShadows[4].SetActive(true);
                 trashBagsShadows[5].SetActive(true);
                 break;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Zone")
-        {
-            zoneBounds = collision.GetComponent<Collider2D>().bounds;
         }
     }    
 }
