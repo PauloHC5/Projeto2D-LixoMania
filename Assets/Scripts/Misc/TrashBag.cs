@@ -39,6 +39,7 @@ public class TrashBag : MonoBehaviour, IThrowingObject, IInteractable
         if (canInteract)
         {
             col.isTrigger = true;
+            rb.velocity = Vector2.zero;
 
             return this as T;
         }
