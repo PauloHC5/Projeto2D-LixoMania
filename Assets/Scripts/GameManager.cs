@@ -46,6 +46,11 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(LoadSceneRoutine("Praca"));
                 pauseMenu.gameObject.SetActive(false);
                 break;
+            case GameState.Exit:
+                Instantiate(Resources.Load("Misc/Transition")).GetComponent<Transition>().StartTransition();
+                StartCoroutine(LoadSceneRoutine("Menu"));
+                pauseMenu.gameObject.SetActive(false);
+                break;
         }
 
         OnGameStateChanged?.Invoke(newState);
@@ -80,7 +85,8 @@ public class GameManager : MonoBehaviour
     {
         Victory,
         Lose,
-        Restart,        
+        Restart,     
+        Exit
     }
     
 }

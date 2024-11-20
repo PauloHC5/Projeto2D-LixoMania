@@ -71,6 +71,12 @@ public class PauseMenu : MonoBehaviour
                 Time.timeScale = 1f;
                 GameManager.Instance.UpdateGameState(GameManager.GameState.Restart);
             }
+
+            if (optionsIndex == 2)
+            {
+                Time.timeScale = 1f;
+                GameManager.Instance.UpdateGameState(GameManager.GameState.Exit);
+            }
         }        
     }
 

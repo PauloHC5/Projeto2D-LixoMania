@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -18,9 +19,7 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private int optionsIndex = 0;
 
-    [SerializeField] private float waitToLoadTime = 2;
-
-    [SerializeField] private Transition transition;
+    [SerializeField] private float waitToLoadTime = 2;    
 
     private Vector2 movementInput;
 
@@ -32,6 +31,10 @@ public class MainMenu : MonoBehaviour
         exitBaseCollor = exit.color;
 
         Time.timeScale = 1f;
+
+        Transition transition = GameObject.FindWithTag("Transition")?.GetComponent<Transition>();
+
+        if (transition != null) StartCoroutine(transition.FinishTransition());
     }
 
     private void Update()
@@ -65,8 +68,8 @@ public class MainMenu : MonoBehaviour
         if (Input.GetButtonDown("VERDE0") && enableInput)
         {
             enableInput = false;
-            StartCoroutine(LoadSceneRoutine());
-            transition.StartTransition();
+            Instantiate(Resources.Load("Misc/Transition")).GetComponent<Transition>().StartTransition();
+            StartCoroutine(LoadSceneRoutine());            
         }
     }
 
