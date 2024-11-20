@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Events;
+using System;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,9 +14,41 @@ public class GameManager : MonoBehaviour
 
     public TrashSpawnManager trashManager;
 
+    public PauseMenu pauseMenu;
+
+    public static event Action<GameState> OnGameStateChanged;
+
+    [SerializeField] private float waitToLoadTime = 6f;
+
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        Transition transition = GameObject.FindWithTag("Transition")?.GetComponent<Transition>();
+
+        if (transition != null) StartCoroutine(transition.FinishTransition());
+    }
+
+    public void UpdateGameState(GameState newState)
+    {
+        state = newState;
+
+        switch(state)
+        {
+            case GameState.Victory: break;
+            case GameState.Lose: break;
+
+            case GameState.Restart:
+                Instantiate(Resources.Load("Misc/Transition")).GetComponent<Transition>().StartTransition();
+                StartCoroutine(LoadSceneRoutine("Praca"));
+                pauseMenu.gameObject.SetActive(false);
+                break;
+        }
+
+        OnGameStateChanged?.Invoke(newState);
     }
 
     private void Update() 
@@ -22,33 +58,29 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame()
     {
-        if (PauseMenu.Instance.gameObject.activeSelf)
+        if (pauseMenu.gameObject.activeSelf)
         {
-            PauseMenu.Instance.gameObject.SetActive(false);
+            pauseMenu.gameObject.SetActive(false);
             Time.timeScale = 1f;
         }
         else
         {
-            PauseMenu.Instance.gameObject.SetActive(true);
+            pauseMenu.gameObject.SetActive(true);
             Time.timeScale = 0f;
         }
-    }
+    }    
 
-    public void UpdateGameStated(GameState newState)
+    private IEnumerator LoadSceneRoutine(string sceneToLoad)
     {
-        state = newState;
-
-        switch (state)
-        {
-            case GameState.Victory: break;
-            case GameState.Lose: break;
-        }
+        yield return new WaitForSeconds(waitToLoadTime);
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     public enum GameState
     {
         Victory,
-        Lose
+        Lose,
+        Restart,        
     }
     
 }

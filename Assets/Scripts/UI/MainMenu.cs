@@ -16,11 +16,11 @@ public class MainMenu : MonoBehaviour
     private Color playBaseCollor;
     private Color exitBaseCollor;    
 
-    [SerializeField]
-    private int optionsIndex = 0;
+    [SerializeField] private int optionsIndex = 0;
 
-    [SerializeField]
-    private float waitToLoadTime = 2;
+    [SerializeField] private float waitToLoadTime = 2;
+
+    [SerializeField] private Transition transition;
 
     private Vector2 movementInput;
 
@@ -66,7 +66,7 @@ public class MainMenu : MonoBehaviour
         {
             enableInput = false;
             StartCoroutine(LoadSceneRoutine());
-            UIFade.Instance.FadeToBlack();
+            transition.StartTransition();
         }
     }
 

@@ -10,6 +10,7 @@ TagManager:
   - npc
   - TrashCan
   - Zone
+  - Transition
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Zones
   - Enemies/NPCs
   - AttackHitBox
-  - 
+  - TrahUI
   - 
   - 
   - 

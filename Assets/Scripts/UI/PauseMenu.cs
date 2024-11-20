@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,16 +19,13 @@ public class PauseMenu : MonoBehaviour
     private Color exitBaseCollor;
 
     [SerializeField]
-    private int optionsIndex = 0;
-
-    [SerializeField]
-    private float waitToLoadTime = 2;
+    private int optionsIndex = 0;    
 
     private Vector2 movementInput;
 
     private bool enableInput = true;
 
-    public static PauseMenu Instance;
+    public static PauseMenu Instance;     
 
     private void Start()
     {
@@ -67,32 +66,18 @@ public class PauseMenu : MonoBehaviour
 
         if (Input.GetButtonDown("VERDE0") && enableInput)
         {
-            if (optionsIndex == 1) SceneManager.LoadScene("Praca");
-            
-            if(optionsIndex == 2)
+            if (optionsIndex == 1)
             {
                 Time.timeScale = 1f;
-                enableInput = false;
-                StartCoroutine(LoadSceneRoutine());
-                UIFade.Instance.FadeToBlack();
-                restart.enabled = false;
-                exit.enabled = false;
-                title.enabled = false;
-            }            
-        }
+                GameManager.Instance.UpdateGameState(GameManager.GameState.Restart);
+            }
+        }        
     }
 
     void CheckPlayerOneInputs()
     {
         // Player 1 Joystick movement input
-        movementInput.y = Input.GetAxisRaw("VERTICAL0"); ;
-
+        movementInput.y = Input.GetAxisRaw("VERTICAL0");
     }
-
-    private IEnumerator LoadSceneRoutine()
-    {
-        yield return new WaitForSeconds(waitToLoadTime);
-
-        SceneManager.LoadScene("Menu");        
-    }
+        
 }
