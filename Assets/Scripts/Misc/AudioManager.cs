@@ -17,6 +17,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip spawnTrashBag;
     public AudioClip takeDamage;    
     public AudioClip heal;
+    public AudioClip telefone;
+    public AudioClip telefonePickup;
+    public AudioClip cartoonTalking;
 
     public static AudioManager Instance;
 
@@ -34,6 +37,11 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);        
-    }    
+    }
+
+    public void StopSFX()
+    {
+        SFXSource.Stop();
+    }
 
 }

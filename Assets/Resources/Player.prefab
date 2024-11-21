@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   throwForce: 2000
+  canMove: 0
 --- !u!114 &6332522382990970018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4071116275319601372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16b4a2f95f54f60448cf99507f41e443, type: 3}
   m_Name: 
@@ -226,7 +227,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4071116275319601372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69a96b637f7f5f44fac9fc9c4f5e34d9, type: 3}
   m_Name: 

@@ -183,6 +183,9 @@ MonoBehaviour:
   spawnTrashBag: {fileID: 8300000, guid: a6b35b5658733274b88982e53f4dee20, type: 3}
   takeDamage: {fileID: 8300000, guid: 68d76dc25bd8148428812cbe6addf223, type: 3}
   heal: {fileID: 8300000, guid: e0392182ebb02c84b9292de2b50b75e3, type: 3}
+  telefone: {fileID: 8300000, guid: 832d441ab675d2842bca127979895357, type: 3}
+  telefonePickup: {fileID: 8300000, guid: 27590f342dc09374d8971cd464aa74ee, type: 3}
+  cartoonTalking: {fileID: 8300000, guid: 3b7cccf25ee7a774c874ec167ab234a2, type: 3}
 --- !u!1 &1792966609653024600
 GameObject:
   m_ObjectHideFlags: 0
