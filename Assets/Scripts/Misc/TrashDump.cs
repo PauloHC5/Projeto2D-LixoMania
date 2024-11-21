@@ -36,7 +36,20 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     void Start()
     {
-        InvokeRepeating(nameof(ChangeSprite), timeToAddTragBag, timeToAddTragBag);
+        GameManager.OnGameStateChanged += OnGameStateChanged;        
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    private void OnGameStateChanged(GameManager.GameState state)
+    {
+        if(state == GameManager.GameState.Start)
+        {
+           InvokeRepeating(nameof(ChangeSprite), timeToAddTragBag, timeToAddTragBag);
+        }
     }
 
     private void ChangeSprite()

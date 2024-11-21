@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -30,6 +31,8 @@ public class NPC : MonoBehaviour
 
     // Variable to track the shadow rotation state
     [SerializeField] private bool isNPCRotated = false;
+    [SerializeField] private NPCTrashSpawner trashSpawner;
+
     private bool canMove = true;    
 
     private Rigidbody2D rb;
@@ -40,16 +43,32 @@ public class NPC : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-    }
+        rb = GetComponent<Rigidbody2D>();     
+        trashSpawner = GetComponent<NPCTrashSpawner>();
+    }        
 
     void Start()
     {
+        GameManager.OnGameStateChanged += OnGameStateChanged;
+
         // Store the original scale of the object
         originalScale = transform.localScale;        
 
         // Start with a random direction
         ChooseRandomDirection();        
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    private void OnGameStateChanged(GameManager.GameState state)
+    {
+        if (state == GameManager.GameState.Start)
+        {
+            if (trashSpawner != null) trashSpawner.enabled = true;
+        }
     }
 
     void Update()

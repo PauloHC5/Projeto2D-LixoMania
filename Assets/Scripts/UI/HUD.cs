@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class HUD : MonoBehaviour
     public RectMask2D trashHUDMask;
     public Slider healthSlider;
     public Slider polutionSlider;
+    public GameObject botao_azul;
+    public GameObject botao_verde;
 
     [Range(0f, 200)]
     [SerializeField] private int trashHUDMaskRange;
@@ -30,7 +33,26 @@ public class HUD : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1.0f;
-        trashManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().trashManager;
+        trashManager = GameObject.FindGameObjectWithTag("GameController").GetComponentInChildren<TrashSpawnManager>();
+
+        GameManager.OnGameStateChanged += OnGameStateChanged;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    private void OnGameStateChanged(GameManager.GameState state)
+    {
+        if(state == GameManager.GameState.Start)
+        {
+            trashHUDMask.gameObject.SetActive(true);
+            healthSlider.gameObject.SetActive(true);
+            polutionSlider.gameObject.SetActive(true);
+            botao_azul.gameObject.SetActive(true);
+            botao_verde.gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame

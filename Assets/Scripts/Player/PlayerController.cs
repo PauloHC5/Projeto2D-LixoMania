@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 {    
     [SerializeField] protected float moveSpeed = 10f;
     [SerializeField] private float throwForce = 500f;
+    [SerializeField] private bool canMove = true;
 
     private int isMovingKey = Animator.StringToHash("isMoving");
     private int moveX = Animator.StringToHash("moveX");
@@ -17,8 +18,7 @@ public class PlayerController : MonoBehaviour
     private int isCarrying = Animator.StringToHash("isCarrying");
     private int Attack = Animator.StringToHash("Attack");
     private int Throw = Animator.StringToHash("Throw");
-
-    private bool canMove = true;    
+       
     public bool IsMoving
     {
         get { return isMoving; }
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 movementInput;
     private Animator animator;
     private PlayerInteract playerInteract;
+    private PlayerHealth playerHealth;
     private PlayerTrashCollection trashCollection;
     
     void Awake()
@@ -42,8 +43,29 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();        
         playerInteract = GetComponent<PlayerInteract>();
+        playerHealth = GetComponent<PlayerHealth>();
         trashCollection = GetComponentInChildren<PlayerTrashCollection>();
-    }    
+    }
+
+    private void Start()
+    {
+        GameManager.OnGameStateChanged += OnGameStateChanged;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    private void OnGameStateChanged(GameManager.GameState state)
+    {
+        if(state == GameManager.GameState.Start)
+        {
+            canMove = true;
+            playerInteract.enabled = true;
+            playerHealth.enabled = true;
+        }
+    }
 
     private void Update()
     {
