@@ -10,11 +10,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public GameState state;
+    public GameState state;    
 
-    public TrashSpawnManager trashManager;
-
-    public PauseMenu pauseMenu;
+    public PauseMenu pauseMenu;    
 
     public static event Action<GameState> OnGameStateChanged;
 
@@ -30,6 +28,8 @@ public class GameManager : MonoBehaviour
         Transition transition = GameObject.FindWithTag("Transition")?.GetComponent<Transition>();
 
         if (transition != null) StartCoroutine(transition.FinishTransition());
+
+        UpdateGameState(GameState.Introduction);
     }
 
     public void UpdateGameState(GameState newState)
@@ -50,6 +50,9 @@ public class GameManager : MonoBehaviour
                 Instantiate(Resources.Load("Misc/Transition")).GetComponent<Transition>().StartTransition();
                 StartCoroutine(LoadSceneRoutine("Menu"));
                 pauseMenu.gameObject.SetActive(false);
+                break;
+
+            case GameState.Introduction:                
                 break;
         }
 
@@ -86,7 +89,9 @@ public class GameManager : MonoBehaviour
         Victory,
         Lose,
         Restart,     
-        Exit
-    }
+        Exit,
+        Start,
+        Introduction
+    }    
     
 }
