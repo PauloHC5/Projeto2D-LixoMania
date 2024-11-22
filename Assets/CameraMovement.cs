@@ -12,9 +12,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
 
     private void Start()
-    {
-        perfectCamera.assetsPPU = 55;
-
+    {        
         GameManager.OnGameStateChanged += OnGameStateChanged;
     }
 
@@ -33,7 +31,15 @@ public class CameraMovement : MonoBehaviour
 
     private IEnumerator StartIntroduction()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
+
+        while(perfectCamera.assetsPPU != 55)
+        {
+            perfectCamera.assetsPPU = (int)Mathf.MoveTowards(perfectCamera.assetsPPU, 55, 0.5f / 3f * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+
+        }
+        
 
         while (transform.position != new Vector3(transform.position.x, -20f, transform.position.z))
         {
