@@ -68,7 +68,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -10.77, y: 0.63506126}
+  m_Offset: {x: -18.01, y: 0.63506126}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -79,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 12.719773}
+  m_Size: {x: 1, y: 21.66}
   m_EdgeRadius: 0
 --- !u!61 &4015697460787028335
 BoxCollider2D:
@@ -113,7 +113,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.40412903, y: -6.0811334}
+  m_Offset: {x: -0.40412903, y: -10.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -124,7 +124,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.783833, y: 1.0577335}
+  m_Size: {x: 36.43, y: 1.0577335}
   m_EdgeRadius: 0
 --- !u!61 &9169332642210202432
 BoxCollider2D:
@@ -158,7 +158,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10.77, y: 0}
+  m_Offset: {x: 18, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -169,7 +169,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 13.2}
+  m_Size: {x: 1, y: 21.19}
   m_EdgeRadius: 0
 --- !u!61 &1544739092371071645
 BoxCollider2D:
@@ -203,7 +203,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.33227777, y: 10.01}
+  m_Offset: {x: 0.33227777, y: 15.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -214,7 +214,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.138447, y: 0.76213646}
+  m_Size: {x: 37.5, y: 0.76213646}
   m_EdgeRadius: 0
 --- !u!114 &6398241400447044029
 MonoBehaviour:
@@ -237,7 +237,7 @@ MonoBehaviour:
   - {fileID: 8740320771419939453, guid: 70e46fcad06aa6949a45f32b5f75e9bf, type: 3}
   - {fileID: 5103092007165479540, guid: 82a90c017c7bae54b8d1787842b0e456, type: 3}
   spawnArea: {fileID: 1544739092371071645}
-  spawnTime: 0.025
+  spawnTime: 0.00625
   colliders:
   - {fileID: 1737422740845018015}
   - {fileID: 4015697460787028335}

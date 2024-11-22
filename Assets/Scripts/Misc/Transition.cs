@@ -36,7 +36,7 @@ public class Transition : MonoBehaviour
 
     private IEnumerator StopTrashSpawn()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2.5f);
         CancelInvoke(nameof(SpawnTrash));
     }
 
