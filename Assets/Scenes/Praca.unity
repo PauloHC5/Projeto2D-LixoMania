@@ -4423,6 +4423,8 @@ GameObject:
   m_Component:
   - component: {fileID: 298142232}
   - component: {fileID: 298142233}
+  - component: {fileID: 298142234}
+  - component: {fileID: 298142235}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -4459,7 +4461,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 1419421834}
   bossTextMeshPro: {fileID: 326140961}
-  cellphone: {fileID: 1602538203}
+  player: {fileID: 1301456792}
+  bossDictionary:
+    bossDictionaryItems:
+    - subject: Introduction pt1
+      text: "Aten\xE7\xE3o novato! Se voc\xEA quer mesmo este emprego, preste aten\xE7\xE3o
+        no que irei dizer."
+    - subject: Introduction pt2
+      text: "Essa \xE9 a pra\xE7a do Ros\xE1rio, e esses cidad\xE3os de campinas
+        s\xE3o bem mal educados, sempre jogam lixo na pra\xE7a todos os dias"
+    - subject: Introduction pt3
+      text: "Sendo assim o seu trabalho \xE9 simples, mantenha ela limpa at\xE9 o
+        fim do expediente e o emprego \xE9 seu. Entendido?"
+    - subject: Introduction pt4
+      text: "Agora v\xE1! E SEM MOLEZA NO TRABALHO!"
+    - subject: Heal
+      text: Novato! Se estiver precisando recuperar energia, passe em uma das barracas
+        de cachorro quente
+    - subject: TrashDump
+      text: "Novato! Estou recebendo reclama\xE7\xF5es de um acumulo de sacos de
+        lixo na pra\xE7a. V\xE1 at\xE9 l\xE1 e jogue tudo nas lixeiras antes que
+        surgam pragas!"
+  playerHealthEventListener: {fileID: 298142234}
+  playerTrashDumpAccumulatedEventListener: {fileID: 298142235}
+--- !u!114 &298142234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298142231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94f966cc4bf40f42a1585cebf0e3d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: cf1c177192f8d024e89ec8533bbe75b1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 298142233}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: HealthTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &298142235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298142231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94f966cc4bf40f42a1585cebf0e3d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0434046474154e84fa59290289108898, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 298142233}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: TrashDumpTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &298696153
 GameObject:
   m_ObjectHideFlags: 0
@@ -5489,8 +5569,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Aten\xE7\xE3o novato! Seu trabalho \xE9 simples, mantenha essa pra\xE7a
-    limpa at\xE9 o fim do expediente e o emprego \xE9 seu"
+  m_text: "Aten\xE7\xE3o novato! Se voc\xEA quer mesmo este emprego preste aten\xE7\xE3o
+    no que irei dizer."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7619,7 +7699,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.818182
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7741,7 +7821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_AssetsPPU: 55
+  m_AssetsPPU: 90
   m_RefResolutionX: 1920
   m_RefResolutionY: 1080
   m_CropFrame: 0
@@ -8382,11 +8462,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4071116275319601372, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6983202241558092858, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+      propertyPath: onPlayerHealthAtHalf
+      value: 
+      objectReference: {fileID: 11400000, guid: cf1c177192f8d024e89ec8533bbe75b1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+--- !u!114 &587133355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1839946159071265665, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+  m_PrefabInstance: {fileID: 587133354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301456792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4442b6fad2d3ef46897c6eb56d42247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &596197352
 GameObject:
   m_ObjectHideFlags: 0
@@ -18742,6 +18841,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1301456792 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4071116275319601372, guid: 313dd382ede93cc4aa1ce16db42cce9c, type: 3}
+  m_PrefabInstance: {fileID: 587133354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1305229177
 GameObject:
   m_ObjectHideFlags: 0
@@ -21808,6 +21912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   pauseMenu: {fileID: 1512639445}
+  playerController: {fileID: 587133355}
   waitToLoadTime: 6
 --- !u!1 &1515365234
 GameObject:
@@ -23553,81 +23658,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1602538201
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1602538202}
-  - component: {fileID: 1602538204}
-  - component: {fileID: 1602538203}
-  m_Layer: 5
-  m_Name: Telefone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1602538202
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602538201}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4066, y: 1.4066, z: 1.4066}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1728799203}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -851, y: 85}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1602538203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602538201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28894455679a56840a7716ee698fe36a, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1602538204
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1602538201}
-  m_CullTransparentMesh: 1
 --- !u!1 &1603732101
 GameObject:
   m_ObjectHideFlags: 0
@@ -25736,6 +25766,8 @@ MonoBehaviour:
   botao_azul: {fileID: 468985697}
   botao_verde: {fileID: 1976244439}
   trashHUDMaskRange: 0
+  player: {fileID: 1301456792}
+  polutionAtHalf: {fileID: 11400000, guid: 9a77de8da335477438d068de9b493894, type: 2}
 --- !u!114 &1728799200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25817,7 +25849,6 @@ RectTransform:
   - {fileID: 279599421}
   - {fileID: 680583653}
   - {fileID: 1512639442}
-  - {fileID: 1602538202}
   - {fileID: 1419421835}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
