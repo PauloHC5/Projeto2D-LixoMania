@@ -15,7 +15,11 @@ public class HUD : MonoBehaviour
     [Range(0f, 200)]
     [SerializeField] private int trashHUDMaskRange;
 
-    private GameObject player;
+    [SerializeField] private GameObject player;
+
+    [Header("Events")]
+
+    public GameEvent polutionAtHalf;
 
     private PlayerTrashCollection trashCollection;
     private PlayerHealth playerHealth;    
@@ -23,8 +27,7 @@ public class HUD : MonoBehaviour
     private TrashSpawnManager trashManager;
 
     void Awake()
-    {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
+    {        
         trashCollection = player.GetComponentInChildren<PlayerTrashCollection>();
         playerHealth = player.GetComponent<PlayerHealth>();
     }
@@ -74,6 +77,7 @@ public class HUD : MonoBehaviour
         else if (trashManager.TrashsInTheZone >= half && trashManager.TrashsInTheZone < threeQuarter)
         {
             polutionSlider.value = half;
+            polutionAtHalf.Raise();
         }
         else if (trashManager.TrashsInTheZone >= threeQuarter && trashManager.TrashsInTheZone < trashManager.SceneMaxTrash)
         {
