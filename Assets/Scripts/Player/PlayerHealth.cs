@@ -10,7 +10,11 @@ public class PlayerHealth : DamageableCharacter
 
     protected bool invencible = false;
 
-    private SpriteRenderer spriteRenderer;    
+    private SpriteRenderer spriteRenderer;
+
+    [Header("Events")]
+
+    public GameEvent onPlayerHealthAtHalf;
 
     public float Health
     {
@@ -19,6 +23,8 @@ public class PlayerHealth : DamageableCharacter
             health = value;
             if (health > 10) health = 10;
             if (health <= 0) Defeated();
+
+            if (health <= 5) onPlayerHealthAtHalf.Raise();
         }
         get { return health; }
     }
@@ -33,7 +39,7 @@ public class PlayerHealth : DamageableCharacter
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    }    
 
     public void Defeated()
     {
