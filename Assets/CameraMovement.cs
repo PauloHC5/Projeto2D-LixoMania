@@ -51,9 +51,9 @@ public class CameraMovement : MonoBehaviour
 
         if (transform.position == new Vector3(transform.position.x, -20f, transform.position.z))
         {
+            GameManager.Instance.UpdateGameState(GameManager.GameState.Start);
             virtualCamera.Follow = GameObject.FindWithTag("Player").transform;
-            perfectCamera.assetsPPU = 90;
-            GameManager.Instance.UpdateGameState(GameManager.GameState.Start);            
+            perfectCamera.assetsPPU = 90;            
         }
     }
 }
