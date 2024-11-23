@@ -18,6 +18,10 @@ public class TrashDump : MonoBehaviour, IInteractable
     public List<Sprite> trasgBagsSprites;
     public List<GameObject> trashBagsShadows;
 
+    [Header("Events")]
+
+    public GameEvent onTrashDumpAccumulated;
+
     private SpriteRenderer spriteRenderer;    
 
     private bool isAccumulated = false;
@@ -54,7 +58,12 @@ public class TrashDump : MonoBehaviour, IInteractable
 
     private void ChangeSprite()
     {
-        if(trashBagsAmount < trasgBagsSprites.Count) trashBagsAmount++;
+        if (trashBagsAmount < trasgBagsSprites.Count)
+        {
+            ++trashBagsAmount;
+            if (trashBagsAmount == trasgBagsSprites.Count) onTrashDumpAccumulated.Raise();
+        }
+            
     }
 
     // Update is called once per frame
@@ -67,7 +76,7 @@ public class TrashDump : MonoBehaviour, IInteractable
         }
 
         if(trashBagsAmount <= 0) capsuleCollider.enabled = false;
-        else capsuleCollider.enabled = true;
+        else capsuleCollider.enabled = true;        
 
         AlternateTrashBagsShadowsWithTheAmount();
 

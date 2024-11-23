@@ -657,6 +657,7 @@ MonoBehaviour:
   - {fileID: 1865925774776735082}
   - {fileID: 1838883112560212147}
   - {fileID: 2229126495384871094}
+  onTrashDumpAccumulated: {fileID: 11400000, guid: 0434046474154e84fa59290289108898, type: 2}
 --- !u!1 &5216541803449867405
 GameObject:
   m_ObjectHideFlags: 0
