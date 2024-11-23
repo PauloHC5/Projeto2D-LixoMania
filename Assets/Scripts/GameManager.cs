@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public PauseMenu pauseMenu;    
 
+    public PlayerController playerController;
+
     public static event Action<GameState> OnGameStateChanged;
 
     [SerializeField] private float waitToLoadTime = 6f;
@@ -54,6 +56,11 @@ public class GameManager : MonoBehaviour
 
             case GameState.Introduction:                
                 break;
+            
+            case GameState.Start:
+                playerController.gameObject.SetActive(true);
+                break;
+                
         }
 
         OnGameStateChanged?.Invoke(newState);
@@ -66,15 +73,15 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame()
     {
-        if (pauseMenu.gameObject.activeSelf)
+        if (!pauseMenu.gameObject.activeSelf && state != GameState.Introduction)
         {
-            pauseMenu.gameObject.SetActive(false);
-            Time.timeScale = 1f;
+            pauseMenu.gameObject.SetActive(true);
+            Time.timeScale = 0f;            
         }
         else
         {
-            pauseMenu.gameObject.SetActive(true);
-            Time.timeScale = 0f;
+            pauseMenu.gameObject.SetActive(false);
+            Time.timeScale = 1f;
         }
     }    
 

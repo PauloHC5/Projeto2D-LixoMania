@@ -32,8 +32,7 @@ public class PauseMenu : MonoBehaviour
         playBaseCollor = restart.color;
         exitBaseCollor = exit.color;
 
-        Instance = this;
-        gameObject.SetActive(false);
+        Instance = this;        
     }
 
     private void Update()
