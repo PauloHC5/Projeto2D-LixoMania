@@ -19,7 +19,9 @@ public class TutorialManager : MonoBehaviour
     [Header("Listeners")]
     public GameEventListener playerHealthEventListener;
 
-    public GameEventListener playerTrashDumpAccumulatedEventListener;
+    public GameEventListener trashDumpAccumulatedEventListener;
+
+    public GameEventListener polutionHighEventListener;
 
     private Dictionary<string, string> bossTexts;
 
@@ -85,7 +87,7 @@ public class TutorialManager : MonoBehaviour
         {
             StartCoroutine(TutorialRotine("TrashDump"));
             StartCoroutine(TutorialBreakRoutine());
-            playerTrashDumpAccumulatedEventListener.enabled = false;
+            trashDumpAccumulatedEventListener.enabled = false;
         }
     }      
 
@@ -95,7 +97,7 @@ public class TutorialManager : MonoBehaviour
         {
             StartCoroutine(TutorialRotine("Polution"));
             StartCoroutine(TutorialBreakRoutine());
-            playerTrashDumpAccumulatedEventListener.enabled = false;
+            polutionHighEventListener.enabled = false;
         }
     }
 

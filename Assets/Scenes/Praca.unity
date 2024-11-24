@@ -3088,7 +3088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d82d3a0bed9a24989f4e0173770b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneMaxTrash: 200
+  sceneMaxTrash: 20
   trashsInTheSceneCount: 0
 --- !u!1 &196203713
 GameObject:
@@ -4425,6 +4425,7 @@ GameObject:
   - component: {fileID: 298142233}
   - component: {fileID: 298142234}
   - component: {fileID: 298142235}
+  - component: {fileID: 298142236}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -4482,8 +4483,13 @@ MonoBehaviour:
       text: "Novato! Estou recebendo reclama\xE7\xF5es de um acumulo de sacos de
         lixo na pra\xE7a. V\xE1 at\xE9 l\xE1 e jogue tudo nas lixeiras antes que
         surgam pragas!"
+    - subject: Polution
+      text: "Estou recebendo reclama\xE7\xF5es reclama\xE7\xF5es aqui que a pra\xE7a
+        est\xE1 bastante suja novato. Se n\xE3o resolver isso logo pode esquecer
+        sua vaga!"
   playerHealthEventListener: {fileID: 298142234}
-  playerTrashDumpAccumulatedEventListener: {fileID: 298142235}
+  trashDumpAccumulatedEventListener: {fileID: 298142235}
+  polutionHighEventListener: {fileID: 298142236}
 --- !u!114 &298142234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4531,6 +4537,34 @@ MonoBehaviour:
       - m_Target: {fileID: 298142233}
         m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
         m_MethodName: TrashDumpTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &298142236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298142231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94f966cc4bf40f42a1585cebf0e3d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 9a77de8da335477438d068de9b493894, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 298142233}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: PolutionTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
