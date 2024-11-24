@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TrashDump : MonoBehaviour, IInteractable
@@ -53,6 +54,11 @@ public class TrashDump : MonoBehaviour, IInteractable
         if(state == GameManager.GameState.Start)
         {
            InvokeRepeating(nameof(ChangeSprite), timeToAddTragBag, timeToAddTragBag);
+        }
+        else if(state == GameManager.GameState.Victory || state == GameManager.GameState.Defeat)
+        {
+            CancelInvoke(nameof(ChangeSprite));
+            StopAllCoroutines();
         }
     }
 

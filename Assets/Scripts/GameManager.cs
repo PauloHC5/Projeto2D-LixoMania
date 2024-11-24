@@ -19,11 +19,17 @@ public class GameManager : MonoBehaviour
 
     public GameState state;    
 
-    public PauseMenu pauseMenu;    
+    public PauseMenu pauseMenu;
+
+    public GameOverScreen gameOverScreen;
 
     public PlayerController playerController;
 
+    public TrashSpawnManager trashSpawnManager;
+
     public static event Action<GameState> OnGameStateChanged;  
+
+    public DeathReason deathReason = DeathReason.None;
     
     public float TimeElapsed { get => timeElapsed; }
 
@@ -49,8 +55,12 @@ public class GameManager : MonoBehaviour
 
         switch(state)
         {
-            case GameState.Victory: break;
-            case GameState.Lose: break;
+            case GameState.Victory:
+                gameOverScreen.gameObject.SetActive(true);
+                break;
+            case GameState.Defeat:
+                gameOverScreen.gameObject.SetActive(true);
+                break;
 
             case GameState.Restart:
                 Instantiate(Resources.Load("Misc/Transition")).GetComponent<Transition>().StartTransition();
@@ -80,12 +90,23 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetButtonDown("MENU")) PauseGame();
 
-        if (canCountTimeElapsed && state != GameState.Victory) timeElapsed += Time.deltaTime;
+        if (canCountTimeElapsed && (state != GameState.Victory && state != GameState.Defeat)) timeElapsed += Time.deltaTime;
+
+        if (timeElapsed >= timeToWin * 60 && state == GameState.Start)
+        {            
+            UpdateGameState(GameState.Victory);            
+        }
+
+        if (trashSpawnManager.TrashsInTheScene >= trashSpawnManager.SceneMaxTrash)
+        {
+            UpdateGameState(GameState.Defeat);
+            deathReason = DeathReason.TrashAtMax;
+        }
     }
 
     private void PauseGame()
     {
-        if (!pauseMenu.gameObject.activeSelf && state != GameState.Introduction)
+        if (!pauseMenu.gameObject.activeSelf && (state != GameState.Introduction && state != GameState.Victory && state == GameState.Defeat))
         {
             pauseMenu.gameObject.SetActive(true);
             Time.timeScale = 0f;            
@@ -106,11 +127,18 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         Victory,
-        Lose,
+        Defeat,
         Restart,     
         Exit,
         Start,
         Introduction
     }    
+
+    public enum DeathReason
+    {
+        None,
+        TrashAtMax,
+        PlayerDeath
+    }
     
 }

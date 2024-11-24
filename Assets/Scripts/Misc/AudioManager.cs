@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = background;
         musicSource.Play();    
         
-        SFXPassosSource.Stop();
+         if(SFXPassosSource) SFXPassosSource.Stop();
     }
 
     public void PlaySFX(AudioClip clip)

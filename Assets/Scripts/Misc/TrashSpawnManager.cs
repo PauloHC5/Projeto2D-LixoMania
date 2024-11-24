@@ -12,7 +12,7 @@ public class TrashSpawnManager : MonoBehaviour
 
     [SerializeField] protected int trashsInTheSceneCount = 0;    
 
-    public int TrashsInTheZone { get { return trashsInTheSceneCount; } }
+    public int TrashsInTheScene { get { return trashsInTheSceneCount; } }
 
     public int SceneMaxTrash { get { return sceneMaxTrash; } }
 

@@ -44,6 +44,8 @@ public class PlayerHealth : DamageableCharacter
     public void Defeated()
     {
         rb.simulated = false;
+        GameManager.Instance.deathReason = GameManager.DeathReason.PlayerDeath;
+        GameManager.Instance.UpdateGameState(GameManager.GameState.Defeat);
         if (deathVFX)
         {
             Instantiate(deathVFX, transform.position, Quaternion.identity);
@@ -53,7 +55,7 @@ public class PlayerHealth : DamageableCharacter
 
     }
     private void RemoveCharacter()
-    {
+    {        
         Destroy(gameObject);
     }
 

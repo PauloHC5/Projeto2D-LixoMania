@@ -45,6 +45,18 @@ public class TutorialManager : MonoBehaviour
         {
             StartCoroutine(IntroductionRoutine());
         }
+        else if(state == GameManager.GameState.Victory)
+        {
+            StartCoroutine(VictoryRoutine());
+        }
+        else if(state == GameManager.GameState.Restart)
+        {
+            boss.gameObject.SetActive(false);
+        }
+        else if(state == GameManager.GameState.Defeat)
+        {
+            if(GameManager.Instance.deathReason != GameManager.DeathReason.None) StartCoroutine(DefeatRoutine());
+        }
     }
 
     private IEnumerator IntroductionRoutine()
@@ -117,6 +129,23 @@ public class TutorialManager : MonoBehaviour
         breakRoutine = true;
         yield return new WaitForSeconds(30f);
         breakRoutine = false;
+    }
+
+    private IEnumerator VictoryRoutine()
+    {
+        boss.gameObject.SetActive(true);
+        bossTextMeshPro.text = bossTexts["Victory"];
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.cartoonTalking);
+        yield return new WaitForSeconds(10f);
+        AudioManager.Instance.StopSFX();        
+    }
+    private IEnumerator DefeatRoutine()
+    {
+        boss.gameObject.SetActive(true);        
+        bossTextMeshPro.text = bossTexts[GameManager.Instance.deathReason.ToString()];
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.cartoonTalking);
+        yield return new WaitForSeconds(10f);
+        AudioManager.Instance.StopSFX();        
     }
 }
 

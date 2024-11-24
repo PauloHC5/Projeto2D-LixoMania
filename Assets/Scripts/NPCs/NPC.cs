@@ -69,6 +69,11 @@ public class NPC : MonoBehaviour
         {
             if (trashSpawner != null) trashSpawner.enabled = true;
         }
+        else if(state == GameManager.GameState.Victory || state == GameManager.GameState.Defeat)
+        {
+            if (trashSpawner != null) trashSpawner.enabled = false;
+            canMove = false;
+        }
     }
 
     void Update()
@@ -78,7 +83,7 @@ public class NPC : MonoBehaviour
 
         // Timer to change direction
         timer += Time.deltaTime;
-        if (timer >= changeDirectionTime)
+        if (timer >= changeDirectionTime && canMove)
         {
             ChooseRandomDirection();
             timer = 0f;

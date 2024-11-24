@@ -18,6 +18,24 @@ public class EnemySpawn : MonoBehaviour
         trashDump = GetComponentInParent<TrashDump>();
     }
 
+    private void Start()
+    {
+        GameManager.OnGameStateChanged += OnGameStateChanged;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    private void OnGameStateChanged(GameManager.GameState state)
+    {
+        if(state == GameManager.GameState.Victory || state == GameManager.GameState.Defeat)
+        {
+            CancelInvoke(nameof(SpawnEnemies));
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

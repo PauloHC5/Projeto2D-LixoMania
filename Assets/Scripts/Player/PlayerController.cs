@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInteract playerInteract;
     private PlayerHealth playerHealth;
     private PlayerTrashCollection trashCollection;
+    private BoxCollider2D playerCollider;
     
     void Awake()
     {
@@ -44,12 +45,13 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();        
         playerInteract = GetComponent<PlayerInteract>();
         playerHealth = GetComponent<PlayerHealth>();
-        trashCollection = GetComponentInChildren<PlayerTrashCollection>();
+        trashCollection = GetComponentInChildren<PlayerTrashCollection>();        
     }
 
     private void Start()
     {
         GameManager.OnGameStateChanged += OnGameStateChanged;
+        playerCollider = GetComponent<BoxCollider2D>();
     }
 
     private void OnDestroy()
@@ -59,11 +61,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnGameStateChanged(GameManager.GameState state)
     {
-        if(state == GameManager.GameState.Start)
+        if (state == GameManager.GameState.Start)
         {
             canMove = true;
             playerInteract.enabled = true;
             playerHealth.enabled = true;
+        }
+        else if (state == GameManager.GameState.Victory || state == GameManager.GameState.Defeat)
+        {
+            canMove = false;
+            playerInteract.enabled = false;
+            playerHealth.enabled = false;
+            playerCollider.enabled = false;
         }
     }
 

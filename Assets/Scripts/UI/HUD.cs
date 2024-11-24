@@ -58,6 +58,15 @@ public class HUD : MonoBehaviour
             botao_verde.gameObject.SetActive(true);
             relogio.gameObject.SetActive(true);
         }
+        else if(state == GameManager.GameState.Restart || state == GameManager.GameState.Exit)
+        {
+            trashHUDMask.gameObject.SetActive(false);
+            healthSlider.gameObject.SetActive(false);
+            polutionSlider.gameObject.SetActive(false);
+            botao_azul.gameObject.SetActive(false);
+            botao_verde.gameObject.SetActive(false);
+            relogio.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -72,20 +81,20 @@ public class HUD : MonoBehaviour
         float half = trashManager.SceneMaxTrash / 2f;
         float threeQuarter = trashManager.SceneMaxTrash / 1.5f;
 
-        if (trashManager.TrashsInTheZone >= onequarter && trashManager.TrashsInTheZone < half)
+        if (trashManager.TrashsInTheScene >= onequarter && trashManager.TrashsInTheScene < half)
         {
             polutionSlider.value = onequarter;
         }
-        else if (trashManager.TrashsInTheZone >= half && trashManager.TrashsInTheZone < threeQuarter)
+        else if (trashManager.TrashsInTheScene >= half && trashManager.TrashsInTheScene < threeQuarter)
         {
             polutionSlider.value = half;
             polutionAtHalf.Raise();
         }
-        else if (trashManager.TrashsInTheZone >= threeQuarter && trashManager.TrashsInTheZone < trashManager.SceneMaxTrash)
+        else if (trashManager.TrashsInTheScene >= threeQuarter && trashManager.TrashsInTheScene < trashManager.SceneMaxTrash)
         {
             polutionSlider.value = threeQuarter;
         }
-        else if(trashManager.TrashsInTheZone >= trashManager.SceneMaxTrash)
+        else if(trashManager.TrashsInTheScene >= trashManager.SceneMaxTrash)
         {
             polutionSlider.value = trashManager.SceneMaxTrash;
         }
