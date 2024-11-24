@@ -11,6 +11,7 @@ public class HUD : MonoBehaviour
     public Slider polutionSlider;
     public GameObject botao_azul;
     public GameObject botao_verde;
+    public GameObject relogio;
 
     [Range(0f, 200)]
     [SerializeField] private int trashHUDMaskRange;
@@ -55,6 +56,7 @@ public class HUD : MonoBehaviour
             polutionSlider.gameObject.SetActive(true);
             botao_azul.gameObject.SetActive(true);
             botao_verde.gameObject.SetActive(true);
+            relogio.gameObject.SetActive(true);
         }
     }
 

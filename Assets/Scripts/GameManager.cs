@@ -8,6 +8,13 @@ using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private float waitToLoadTime = 6f;
+    [SerializeField] private float timeToWin = 9f;
+
+    [SerializeField] private float timeElapsed = 0f;
+    private bool canCountTimeElapsed = false;
+
+    [Header("References")]
     public static GameManager Instance;
 
     public GameState state;    
@@ -16,9 +23,11 @@ public class GameManager : MonoBehaviour
 
     public PlayerController playerController;
 
-    public static event Action<GameState> OnGameStateChanged;
+    public static event Action<GameState> OnGameStateChanged;  
+    
+    public float TimeElapsed { get => timeElapsed; }
 
-    [SerializeField] private float waitToLoadTime = 6f;
+    public float TimeToWin { get => timeToWin * 60; }
 
     private void Awake()
     {
@@ -59,6 +68,7 @@ public class GameManager : MonoBehaviour
             
             case GameState.Start:
                 playerController.gameObject.SetActive(true);
+                canCountTimeElapsed = true;
                 break;
                 
         }
@@ -68,7 +78,9 @@ public class GameManager : MonoBehaviour
 
     private void Update() 
     {
-        if (Input.GetButtonDown("MENU")) PauseGame();        
+        if (Input.GetButtonDown("MENU")) PauseGame();
+
+        if (canCountTimeElapsed && state != GameState.Victory) timeElapsed += Time.deltaTime;
     }
 
     private void PauseGame()

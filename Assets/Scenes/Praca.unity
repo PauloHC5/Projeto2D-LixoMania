@@ -4484,9 +4484,8 @@ MonoBehaviour:
         lixo na pra\xE7a. V\xE1 at\xE9 l\xE1 e jogue tudo nas lixeiras antes que
         surgam pragas!"
     - subject: Polution
-      text: "Estou recebendo reclama\xE7\xF5es reclama\xE7\xF5es aqui que a pra\xE7a
-        est\xE1 bastante suja novato. Se n\xE3o resolver isso logo pode esquecer
-        sua vaga!"
+      text: "Estou recebendo v\xE1rias reclama\xE7\xF5es aqui de que a pra\xE7a est\xE1
+        bastante suja novato. Se n\xE3o resolver isso logo pode esquecer sua vaga!"
   playerHealthEventListener: {fileID: 298142234}
   trashDumpAccumulatedEventListener: {fileID: 298142235}
   polutionHighEventListener: {fileID: 298142236}
@@ -6108,6 +6107,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &351122528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 351122529}
+  - component: {fileID: 351122531}
+  - component: {fileID: 351122530}
+  m_Layer: 5
+  m_Name: Ponteiro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &351122529
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351122528}
+  m_LocalRotation: {x: 0, y: 0, z: 0.86602545, w: 0.49999994}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1497430906}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 120}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.2, y: -4.3}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &351122530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351122528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: bacf68c8ecf06854e82a238997c39fed, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &351122531
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351122528}
+  m_CullTransparentMesh: 1
 --- !u!1001 &355275484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13094,8 +13168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.04}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 166, y: 11}
-  m_SizeDelta: {x: 537.2765, y: -2.7613}
+  m_AnchoredPosition: {x: 117.53488, y: 11.034406}
+  m_SizeDelta: {x: 466.1646, y: -2.7613}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &869394242
 GameObject:
@@ -21633,6 +21707,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1705961880489708083, guid: e912eed3faff7624885dd53e9e3ad511, type: 3}
   m_PrefabInstance: {fileID: 1482977327}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1497430905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1497430906}
+  - component: {fileID: 1497430908}
+  - component: {fileID: 1497430907}
+  - component: {fileID: 1497430909}
+  m_Layer: 5
+  m_Name: Relogio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1497430906
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497430905}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 351122529}
+  m_Father: {fileID: 1728799203}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 415}
+  m_SizeDelta: {x: 150.3313, y: 150.7303}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1497430907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497430905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 41f502216d327e445bd0f027557fc50b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1497430908
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497430905}
+  m_CullTransparentMesh: 1
+--- !u!114 &1497430909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497430905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27d6dc5dfd37324daf60075e958ba19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clockPointer: {fileID: 351122528}
 --- !u!1 &1499430666
 GameObject:
   m_ObjectHideFlags: 0
@@ -21944,10 +22108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c684be39ce475134b945aa2b716d5805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitToLoadTime: 6
+  timeToWin: 1
+  timeElapsed: 0
   state: 0
   pauseMenu: {fileID: 1512639445}
   playerController: {fileID: 587133355}
-  waitToLoadTime: 6
 --- !u!1 &1515365234
 GameObject:
   m_ObjectHideFlags: 0
@@ -25799,6 +25965,7 @@ MonoBehaviour:
   polutionSlider: {fileID: 279599422}
   botao_azul: {fileID: 468985697}
   botao_verde: {fileID: 1976244439}
+  relogio: {fileID: 1497430905}
   trashHUDMaskRange: 0
   player: {fileID: 1301456792}
   polutionAtHalf: {fileID: 11400000, guid: 9a77de8da335477438d068de9b493894, type: 2}
@@ -25884,6 +26051,7 @@ RectTransform:
   - {fileID: 680583653}
   - {fileID: 1512639442}
   - {fileID: 1419421835}
+  - {fileID: 1497430906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -26878,8 +27046,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.04}
   m_AnchorMin: {x: 1, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.25}
-  m_AnchoredPosition: {x: 34, y: 36}
-  m_SizeDelta: {x: 165.044, y: 35.8927}
+  m_AnchoredPosition: {x: -9.1604, y: 36.0306}
+  m_SizeDelta: {x: 148.212, y: 35.8927}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795306063
 MonoBehaviour:
