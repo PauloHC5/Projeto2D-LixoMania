@@ -3088,7 +3088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7d82d3a0bed9a24989f4e0173770b19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneMaxTrash: 20
+  sceneMaxTrash: 100
   trashsInTheSceneCount: 0
 --- !u!1 &196203713
 GameObject:
