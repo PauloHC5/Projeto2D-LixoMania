@@ -46,6 +46,7 @@ public class PlayerHealth : DamageableCharacter
         rb.simulated = false;
         GameManager.Instance.deathReason = GameManager.DeathReason.PlayerDeath;
         GameManager.Instance.UpdateGameState(GameManager.GameState.Defeat);
+        if (AudioManager.Instance.PassosSource && AudioManager.Instance.PassosSource.isPlaying) AudioManager.Instance.PassosSource.Stop();
         if (deathVFX)
         {
             Instantiate(deathVFX, transform.position, Quaternion.identity);

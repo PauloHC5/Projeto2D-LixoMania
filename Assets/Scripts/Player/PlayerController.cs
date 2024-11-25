@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             playerInteract.enabled = true;
             playerHealth.enabled = true;
         }
-        else if (state == GameManager.GameState.Victory || state == GameManager.GameState.Defeat)
+        else if (state == GameManager.GameState.Victory || state == GameManager.GameState.Defeat || state == GameManager.GameState.Restart)
         {
             canMove = false;
             playerInteract.enabled = false;
@@ -95,12 +95,12 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat(moveX, movementInput.x);
             animator.SetFloat(moveY, movementInput.y);
 
-            if (!AudioManager.Instance.PassosSource.isPlaying) AudioManager.Instance.PassosSource.Play();
+            if (AudioManager.Instance.PassosSource && !AudioManager.Instance.PassosSource.isPlaying) AudioManager.Instance.PassosSource.Play();
         }             
         else
         {            
             IsMoving = false;
-            if (AudioManager.Instance.PassosSource.isPlaying) AudioManager.Instance.PassosSource.Stop();
+            if (AudioManager.Instance.PassosSource && AudioManager.Instance.PassosSource.isPlaying) AudioManager.Instance.PassosSource.Stop();
         }
         
     }    

@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip telefone;
     public AudioClip telefonePickup;
     public AudioClip cartoonTalking;
+    public AudioClip victoryMusic;
+    public AudioClip defeatMusic;
 
     public static AudioManager Instance;
 
@@ -39,6 +41,17 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);        
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();        
+    }
+
+    public void StopCellphone()
+    {
+        SFXSource.Stop();
+        SFXSource.PlayOneShot(cartoonTalking);
     }
 
     public void StopSFX()

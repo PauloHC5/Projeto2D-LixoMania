@@ -57,9 +57,13 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Victory:
                 gameOverScreen.gameObject.SetActive(true);
+                AudioManager.Instance.StopMusic();
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.victoryMusic);
                 break;
             case GameState.Defeat:
                 gameOverScreen.gameObject.SetActive(true);
+                AudioManager.Instance.StopMusic();
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.defeatMusic);
                 break;
 
             case GameState.Restart:
@@ -106,23 +110,27 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame()
     {
-        if (!pauseMenu.gameObject.activeSelf && (state != GameState.Introduction && state != GameState.Victory && state == GameState.Defeat))
+
+        if(state != GameState.Introduction && state != GameState.Victory && state != GameState.Defeat)
         {
-            pauseMenu.gameObject.SetActive(true);
-            Time.timeScale = 0f;            
-        }
-        else
-        {
-            pauseMenu.gameObject.SetActive(false);
-            Time.timeScale = 1f;
-        }
+            if (!pauseMenu.gameObject.activeSelf)
+            {
+                pauseMenu.gameObject.SetActive(true);
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                pauseMenu.gameObject.SetActive(false);
+                Time.timeScale = 1f;
+            }
+        }        
     }    
 
     private IEnumerator LoadSceneRoutine(string sceneToLoad)
     {
         yield return new WaitForSeconds(waitToLoadTime);
         SceneManager.LoadScene(sceneToLoad);
-    }
+    }    
 
     public enum GameState
     {

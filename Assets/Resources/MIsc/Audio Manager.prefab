@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.498
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -186,6 +186,8 @@ MonoBehaviour:
   telefone: {fileID: 8300000, guid: 832d441ab675d2842bca127979895357, type: 3}
   telefonePickup: {fileID: 8300000, guid: 27590f342dc09374d8971cd464aa74ee, type: 3}
   cartoonTalking: {fileID: 8300000, guid: 3b7cccf25ee7a774c874ec167ab234a2, type: 3}
+  victoryMusic: {fileID: 8300000, guid: a2adc937551f1e64d8240a09afaf47a4, type: 3}
+  defeatMusic: {fileID: 8300000, guid: 1a9f6b928d209e044986eb271f242847, type: 3}
 --- !u!1 &1792966609653024600
 GameObject:
   m_ObjectHideFlags: 0

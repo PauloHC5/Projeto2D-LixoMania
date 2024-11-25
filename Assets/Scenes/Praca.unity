@@ -21086,9 +21086,9 @@ RectTransform:
   - {fileID: 326140960}
   m_Father: {fileID: 1728799203}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 963, y: 540}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1432331708
@@ -22252,8 +22252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitToLoadTime: 6
-  timeToWin: 9
-  timeElapsed: 50
+  timeToWin: 5
+  timeElapsed: 0
   state: 0
   pauseMenu: {fileID: 1512639445}
   gameOverScreen: {fileID: 615995100}
@@ -30746,10 +30746,6 @@ PrefabInstance:
     - target: {fileID: 1605193406089316640, guid: 08e9cac3bfe6faf49821a859d2eaa5c3, type: 3}
       propertyPath: m_Name
       value: Audio Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 5725491256559447609, guid: 08e9cac3bfe6faf49821a859d2eaa5c3, type: 3}
-      propertyPath: m_Volume
-      value: 0.561
       objectReference: {fileID: 0}
     - target: {fileID: 7080566389019660140, guid: 08e9cac3bfe6faf49821a859d2eaa5c3, type: 3}
       propertyPath: m_LocalPosition.x

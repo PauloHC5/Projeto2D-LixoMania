@@ -60,16 +60,14 @@ public class TutorialManager : MonoBehaviour
     }
 
     private IEnumerator IntroductionRoutine()
-    {        
+    {
+        boss.gameObject.SetActive(false);
         yield return new WaitForSeconds(1f);        
         AudioManager.Instance.PlaySFX(AudioManager.Instance.telefone);
         yield return new WaitForSeconds(1.5f);
-        AudioManager.Instance.StopSFX();        
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.telefonePickup);
-        yield return new WaitForSeconds(1.5f);
+        AudioManager.Instance.StopCellphone();        
         boss.gameObject.SetActive(true);
-        bossTextMeshPro.text = bossTexts["Introduction pt1"];
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.cartoonTalking);
+        bossTextMeshPro.text = bossTexts["Introduction pt1"];        
         yield return new WaitForSeconds(5f);
         bossTextMeshPro.text = bossTexts["Introduction pt2"];
         yield return new WaitForSeconds(7f);
@@ -84,13 +82,10 @@ public class TutorialManager : MonoBehaviour
     }
 
     public void HealthTutorial()
-    {
-        if(!breakRoutine)
-        {
-            StartCoroutine(TutorialRotine("Heal"));
-            StartCoroutine(TutorialBreakRoutine());
-            playerHealthEventListener.enabled = false;
-        }        
+    {                
+        StartCoroutine(TutorialRotine("Heal"));
+        StartCoroutine(TutorialBreakRoutine());
+        playerHealthEventListener.enabled = false;                
     }    
 
     public void TrashDumpTutorial()
@@ -136,7 +131,7 @@ public class TutorialManager : MonoBehaviour
         boss.gameObject.SetActive(true);
         bossTextMeshPro.text = bossTexts["Victory"];
         AudioManager.Instance.PlaySFX(AudioManager.Instance.cartoonTalking);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3f);
         AudioManager.Instance.StopSFX();        
     }
     private IEnumerator DefeatRoutine()
@@ -144,7 +139,7 @@ public class TutorialManager : MonoBehaviour
         boss.gameObject.SetActive(true);        
         bossTextMeshPro.text = bossTexts[GameManager.Instance.deathReason.ToString()];
         AudioManager.Instance.PlaySFX(AudioManager.Instance.cartoonTalking);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3f);
         AudioManager.Instance.StopSFX();        
     }
 }

@@ -31,7 +31,7 @@ public class CameraMovement : MonoBehaviour
 
     private IEnumerator StartIntroduction()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         while(perfectCamera.assetsPPU != 55)
         {
